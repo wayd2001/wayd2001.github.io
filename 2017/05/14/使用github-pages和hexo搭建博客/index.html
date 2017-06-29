@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="网络,send,recv," />
+  <meta name="keywords" content="hexo," />
 
 
 
@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="网络开发时，调用send和recv进行数据收发，经常会遇到一些异常问题，导致返回值为－1，errno被置为某个特殊值。这时就需要我们根据经验，结合实际情况判断问题症结，这样才能快速定位和处理问题。下面总结了一些开发中，经常会遇到的问题。  Connection reset by peer这个错误一般是对端已经关闭连接（处于关闭连接过程中），本端依然向对端发送数据导致。  Broken pipe这个">
-<meta name="keywords" content="网络,send,recv">
+<meta name="description" content="我是小小强，这是我的第4篇原创文章，阅读需要大约10分钟。    三思而行:在真正操作前，学习了网上的资料，逐步明确搭建博客的目的。  使用github pages 及hexo完成博客 分别备份博客源文件及生成的静态页面，前者的仓库应当是私有的 可免密推送仓库  安装及配置github sshkey前提:本地具备git环境  注册github并创建仓库创建xx.github.io.git仓库(xx">
+<meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网络编程中send和recv常见错误梳理">
-<meta property="og:url" content="http://yoursite.com/2017/05/14/网络编程/网络编程中send和recv常见错误梳理/index.html">
+<meta property="og:title" content="使用github pages和hexo搭建博客">
+<meta property="og:url" content="http://yoursite.com/2017/05/14/使用github-pages和hexo搭建博客/index.html">
 <meta property="og:site_name" content="小小强的部落">
-<meta property="og:description" content="网络开发时，调用send和recv进行数据收发，经常会遇到一些异常问题，导致返回值为－1，errno被置为某个特殊值。这时就需要我们根据经验，结合实际情况判断问题症结，这样才能快速定位和处理问题。下面总结了一些开发中，经常会遇到的问题。  Connection reset by peer这个错误一般是对端已经关闭连接（处于关闭连接过程中），本端依然向对端发送数据导致。  Broken pipe这个">
-<meta property="og:updated_time" content="2017-05-14T14:05:22.000Z">
+<meta property="og:description" content="我是小小强，这是我的第4篇原创文章，阅读需要大约10分钟。    三思而行:在真正操作前，学习了网上的资料，逐步明确搭建博客的目的。  使用github pages 及hexo完成博客 分别备份博客源文件及生成的静态页面，前者的仓库应当是私有的 可免密推送仓库  安装及配置github sshkey前提:本地具备git环境  注册github并创建仓库创建xx.github.io.git仓库(xx">
+<meta property="og:updated_time" content="2017-06-29T12:42:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="网络编程中send和recv常见错误梳理">
-<meta name="twitter:description" content="网络开发时，调用send和recv进行数据收发，经常会遇到一些异常问题，导致返回值为－1，errno被置为某个特殊值。这时就需要我们根据经验，结合实际情况判断问题症结，这样才能快速定位和处理问题。下面总结了一些开发中，经常会遇到的问题。  Connection reset by peer这个错误一般是对端已经关闭连接（处于关闭连接过程中），本端依然向对端发送数据导致。  Broken pipe这个">
+<meta name="twitter:title" content="使用github pages和hexo搭建博客">
+<meta name="twitter:description" content="我是小小强，这是我的第4篇原创文章，阅读需要大约10分钟。    三思而行:在真正操作前，学习了网上的资料，逐步明确搭建博客的目的。  使用github pages 及hexo完成博客 分别备份博客源文件及生成的静态页面，前者的仓库应当是私有的 可免密推送仓库  安装及配置github sshkey前提:本地具备git环境  注册github并创建仓库创建xx.github.io.git仓库(xx">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/14/网络编程/网络编程中send和recv常见错误梳理/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/14/使用github-pages和hexo搭建博客/"/>
 
 
 
 
 
-  <title>网络编程中send和recv常见错误梳理 | 小小强的部落</title>
+  <title>使用github pages和hexo搭建博客 | 小小强的部落</title>
 
 </head>
 
@@ -274,7 +274,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/14/网络编程/网络编程中send和recv常见错误梳理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/14/使用github-pages和hexo搭建博客/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小小强">
@@ -291,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">网络编程中send和recv常见错误梳理</h1>
+          <h1 class="post-title" itemprop="name headline">使用github pages和hexo搭建博客</h1>
         
 
         <div class="post-meta">
@@ -303,7 +303,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-14T22:04:27+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-14T17:33:59+08:00">
                 2017-05-14
               </time>
             
@@ -360,41 +360,122 @@
       
 
       
-        <p>网络开发时，调用send和recv进行数据收发，经常会遇到一些异常问题，导致返回值为－1，errno被置为某个特殊值。这时就需要我们根据经验，结合实际情况判断问题症结，这样才能快速定位和处理问题。下面总结了一些开发中，经常会遇到的问题。</p>
+        <p>我是小小强，这是我的第4篇原创文章，阅读需要大约10分钟。  </p>
+<hr>
+<p><strong>三思而行</strong>:在真正操作前，学习了网上的资料，逐步明确搭建博客的目的。</p>
 <ul>
-<li><p><strong>Connection reset by peer</strong><br>这个错误一般是对端已经关闭连接（处于关闭连接过程中），本端依然向对端发送数据导致。</p>
+<li>使用github pages 及hexo完成博客</li>
+<li>分别备份博客源文件及生成的静态页面，前者的仓库应当是私有的</li>
+<li>可免密推送仓库</li>
+</ul>
+<h3 id="安装及配置github-sshkey"><a href="#安装及配置github-sshkey" class="headerlink" title="安装及配置github sshkey"></a>安装及配置github sshkey</h3><p><strong>前提</strong>:本地具备git环境</p>
+<ul>
+<li><p>注册github并创建仓库<br>创建xx.github.io.git仓库(xx为github的昵称)，设置master为默认分支，同时本地执行：</p>
+<blockquote>
+<p>cd .ssh<br>ssh-keygen -t rsa -C “xxx@163.com”</p>
+</blockquote>
+<p>  复制产生的id_rsa.pub内容到github上，执行如下命令测试是否成功：</p>
+<blockquote>
+<p>ssh -T git@github.com</p>
+</blockquote>
 </li>
-<li><p><strong>Broken pipe</strong><br>这个错误一般是向一个已经关闭的套接字中写数据，导致管道错误。默认操作系统会终止进程，在c程序中需要将该信号忽略。<br>当向一个已经关闭的链接发送数据时，由于处于tcp的状态不同，可能会导致上面两种不同的结果。</p>
+<li><p>配置多用户登录<br>后续会有多个帐号的sshkey切换，因此在.ssh目录创建config文件，输入：</p>
+<blockquote>
+<p>#github<br>Host github<br>  HostName github.com<br>  User git<br>  IdentityFile ~/.ssh/id_rsa</p>
+</blockquote>
+<p>  如果无错误发生，则本机可免密提交代码到github上。为方便提交代码，完善git信息</p>
+<blockquote>
+<p>git config –global user.name “aierui”//用户名<br>git config –global user.email  “imland@outlook.com”//填写自己的邮箱  </p>
+</blockquote>
 </li>
-<li><p><strong>errno为EAGAIN EWOULDBLOCK EINTR</strong><br>这个是程序中当send和recv返回－1时，判断errno如果为上述值，需要再次send和recv。有下面几个情况：</p>
-<ol>
-<li>用于非阻塞套接字</li>
-<li>阻塞套接字，但是设置了SO_RCVTIMEO和SO_SNDTIMEO</li>
-<li>O_NODELAY会导致write接口返回EAGAIN。如果设置了O_NODELAY而当前不可写，那么write接口会设置errno为EAGAIN，但是write接口会返回0而不是-1。</li>
-</ol>
-</li>
-<li><p><strong>recv返回0 </strong><br>这个是对端已经正常关闭套接字，本端获取这个返回值时，也应当正常关闭。如果对端调用close关闭套接字，本端的recv会从阻塞状态（如果处于阻塞的话）立即返回0。</p>
-</li>
-<li><p><strong>send和recv一直阻塞</strong><br>用于非阻塞套接字，且未设置超时时间。有以下情况：</p>
-<ol>
-<li>发送方阻塞：内核发送缓冲区已满，无法将数据从用户空间拷贝到内核空间，一般对端未及时读取数据导致。</li>
-<li>接收方阻塞：发送方未发送数据导致内核接收缓冲区为空或者应用未及时取走数据。<br>在阻塞状态下，如果断开网络连接，有可能一直阻塞下去。</li>
-</ol>
-</li>
-<li><p><strong>双方同时send导致死锁问题</strong><br>参考<a href="http://m.blog.csdn.net/article/details?id=64131277" target="_blank" rel="external">http://m.blog.csdn.net/article/details?id=64131277</a></p>
+<li><p>检出仓库到本地</p>
+<blockquote>
+<p>git clone <a href="https://github.com/xx/xx.github.io.git" target="_blank" rel="external">https://github.com/xx/xx.github.io.git</a>  </p>
+</blockquote>
 </li>
 </ul>
-<h3 id="另外在java中，会有一些异常，从网上摘录如下"><a href="#另外在java中，会有一些异常，从网上摘录如下" class="headerlink" title="另外在java中，会有一些异常，从网上摘录如下"></a>另外在java中，会有一些异常，从网上摘录如下</h3><blockquote>
-<p>Connection reset by peer的常见原因：<br>1）服务器的并发连接数超过了其承载量，服务器会将其中一些连接关闭；<br>   如果知道实际连接服务器的并发客户数没有超过服务器的承载量，则有可能是中了病毒或者木马，引起网络流量异常。可以使用netstat -an查看网络连接情况。<br>2）客户关掉了浏览器，而服务器还在给客户端发送数据；<br>3）浏览器端按了Stop；<br>   这两种情况一般不会影响服务器。但是如果对异常信息没有特别处理，有可能在服务器的日志文件中，重复出现该异常，造成服务器日志文件过大，影响服务器的运行。可以对引起异常的部分，使用try…catch捕获该异常，然后不输出或者只输出一句提示信息，避免使用e.printStackTrace();输出全部异常信息。<br>4）防火墙的问题；<br>   如果网络连接通过防火墙，而防火墙一般都会有超时的机制，在网络连接长时间不传输数据时，会关闭这个TCP的会话，关闭后在读写，就会导致异常。 如果关闭防火墙，解决了问题，需要重新配置防火墙，或者自己编写程序实现TCP的长连接。实现TCP的长连接，需要自己定义心跳协议，每隔一段时间，发送一次心跳协议，双方维持连接。<br>5）JSP的buffer问题。<br>   JSP页面缺省缓存为8k，当JSP页面数据比较大的时候，有可能JSP没有完全传递给浏览器。这时可以适当调整buffer的大小。 &lt;%@ page buffer=”100k”%&gt;</p>
+<h3 id="安装及配置hexo"><a href="#安装及配置hexo" class="headerlink" title="安装及配置hexo"></a>安装及配置hexo</h3><ul>
+<li><p>安装nodejs</p>
+<blockquote>
+<p>brew install node  </p>
 </blockquote>
-<h3 id="其它异常"><a href="#其它异常" class="headerlink" title="其它异常"></a>其它异常</h3><blockquote>
-<p>第1个异常是java.Net.BindException:Address already in use: JVM_Bind。该异常发生在服务器端进行new ServerSocket(port)（port是一个0，65536的整型值）操作时。异常的原因是以为与port一样的一个端口已经被启动，并进行监听。此时用netstat –an命令，可以看到一个Listending状态的端口。只需要找一个没有被占用的端口就能解决这个问题。</p>
-<p>第2个异常是java.net.ConnectException: Connection refused: connect。该异常发生在客户端进行 new Socket(ip, port)操作时，该异常发生的原因是或者具有ip地址的机器不能找到（也就是说从当前机器不存在到指定ip路由），或者是该ip存在，但找不到指定的端口进行监听。出现该问题，首先检查客户端的ip和port是否写错了，如果正确则从客户端ping一下服务器看是否能 ping通，如果能ping通（服务服务器端把ping禁掉则需要另外的办法），则看在服务器端的监听指定端口的程序是否启动，这个肯定能解决这个问题。 </p>
-<p>第3个异常是java.net.SocketException: Socket is closed，该异常在客户端和服务器均可能发生。异常的原因是己方主动关闭了连接后（调用了Socket的close方法）再对网络连接进行读写操作。 </p>
-<p>第4个异常是java.net.SocketException: （Connection reset或者 Connect reset by peer:Socket write error）。该异常在客户端和服务器端均有可能发生，引起该异常的原因有两个，第一个就是如果一端的Socket被关闭（或主动关闭或者因为异常退出而引起的关闭），另一端仍发送数据，发送的第一个数据包引发该异常 (Connect reset by peer)。另一个是一端退出，但退出时并未关闭该连接，另一端如果在从连接中读数据则抛出该异常（Connection reset）。简单的说就是在连接断开后的读和写操作引起的。 </p>
-<p>第5个异常是java.net.SocketException: Broken pipe。该异常在客户端和服务器均有可能发生。在第4个异常的第一种情况中（也就是抛出SocketExcepton:Connect reset by peer:Socket write error后），如果再继续写数据则抛出该异常。前两个异常的解决方法是首先确保程序退出前关闭所有的网络连接，其次是要检测对方的关闭连接操作，发现对方关闭连接后自己也要关闭该连接。</p>
-<p>客户端错误代码10053 Software caused connection abort（软件原因导致连接中断）</p>
+<p>安装成功后，可以使用npm指令，可以使用node -v查看信息。</p>
+</li>
+<li><p>配置hexo</p>
+<blockquote>
+<p>npm install -g hexo-cli  安装hexo<br>cd xx.github.io.git<br>hexo init 初始化(这一步会覆盖掉.git目录)<br>npm install 安装依赖组件<br>npm install hexo-deployer-git –save</p>
 </blockquote>
+<p>  安装完成后，执行hexo clean;hexo -g;hexo －s可以在localhost:4000查看hexo的默认页面。</p>
+</li>
+<li><p>安装next主题</p>
+<blockquote>
+<p>git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a> themes/next<br>cd themes/next<br>git pull </p>
+</blockquote>
+<p>  配置xx.github.io.git目录下的_config.yml</p>
+<blockquote>
+<p> language: zh-Hans #网站语言<br> timezone: Asia/Shanghai #时区<br> theme: next<br> deploy:<br> type: git<br> repository: <a href="https://github.com/xx/xx.github.io.git" target="_blank" rel="external">https://github.com/xx/xx.github.io.git</a><br> branch: master  </p>
+</blockquote>
+<p>  配置上面的地址后，每次执行hexo -g;hexo -d会将生成的静态页面推送到github上的xx.github.io.git仓库。</p>
+</li>
+</ul>
+<h3 id="安装及配置oschina"><a href="#安装及配置oschina" class="headerlink" title="安装及配置oschina"></a>安装及配置oschina</h3><ul>
+<li><p>设置oschina<br>在oschina上创建仓库hexo，并为oschina添加sshkey</p>
+<blockquote>
+<p>ssh-keygen -t rsa -C “xx@163.com” -f oschina</p>
+</blockquote>
+<p>  将oschina.pub拷贝到oschina的用户设定下。同时修改.ssh/config文件，加入：</p>
+<blockquote>
+<p>#osOne<br>Host oschina<br>  HostName git.oschina.net<br>  User git<br>  IdentityFile ~/.ssh/oschina</p>
+</blockquote>
+<p>  执行ssh -T git@git.oschina.net测试是否成功 。</p>
+</li>
+<li><p>配置本地xx.github.io.git映射到hexo</p>
+<blockquote>
+<p>cd xx.github.io.git<br> rm -rf .git<br>git init<br>git remote add origin <a href="https://git.oschina.net/xx/hexo.git" target="_blank" rel="external">https://git.oschina.net/xx/hexo.git</a><br>git pull origin master<br>git add .<br>git commit -m “add repo first”<br>git push origin master  </p>
+</blockquote>
+<p>  编辑 .gitignore，加入</p>
+<blockquote>
+<p>/.deploy_git<br>/public</p>
+</blockquote>
+</li>
+</ul>
+<p>按照上面的配置完成后，本地源文件会推送到oschina的hexo.git，执行hexo d之后的静态文件会推送到github的xx.github.io.git的master分支。</p>
+<h3 id="日常使用"><a href="#日常使用" class="headerlink" title="日常使用"></a>日常使用</h3><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理：</p>
+<ul>
+<li>依次执行git add .、git commit -m “…”、git push指令将改动的源文件推送到oschina</li>
+<li>执行hexo clean;hexo g -d发布网站到github的master分支   </li>
+</ul>
+<h3 id="恢复资料"><a href="#恢复资料" class="headerlink" title="恢复资料"></a>恢复资料</h3><p>如果想在一个新环境使用博客，按照以下流程处理：</p>
+<ul>
+<li>使用git clone <a href="https://git.oschina.net/wayd2001/hexo.git" target="_blank" rel="external">https://git.oschina.net/wayd2001/hexo.git</a> 拷贝仓库</li>
+<li>在hexo.git目录执行npm install -g hexo-cli、npm install、npm install hexo-deployer-git<br><strong>注意</strong>一定不要执行hexo init。</li>
+</ul>
+<h3 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h3><ul>
+<li>执行hexo -d提示“error:deploy not found:git”，执行下面命令即可<blockquote>
+<p>npm install hexo-deployer-git –save</p>
+</blockquote>
+</li>
+<li>执行ssh -T git@git.oschina.net提示Permission denied (publickey)，是因为产生的sshkey未添加到系统生效，执行如下命令:<blockquote>
+<p>ssh-add ~/.ssh/私钥名  </p>
+</blockquote>
+</li>
+<li>如果不介意博客源文件也放在github上的话，可以先把xx.github.io.git库下到本地，然后在本地建立一个hexo分支，然后把本地的hexo分支推送到github，同时github设置hexo为默认分支。源文件推送到hexo分支，在执行hexo -d时，生成的静态文件会推送到master分支。这样就不需要oschina私有库。使用github一个库，两个分支一样达到目的。</li>
+<li><p>hexo在本地测试运行重启后页面一直空白，或者参照”恢复资料”一节部署后提示如下：</p>
+<blockquote>
+<p>WARN  No layout: 2017/05/13/hello-world/index.html<br>WARN  No layout: archives/index.html<br>WARN  No layout: archives/2017/index.html<br>WARN  No layout: archives/2017/05/index.html<br>WARN  No layout: index.html  </p>
+</blockquote>
+<p>这个原因是从oschina下载的themes目录下的next主题目录为空，因为next也是一个版本库，目录下包含.git目录，当向oschina进行push时，未push上去。目前的解决方案时将next目录下的.git改名为next_git，在此push发现还是没有提交上去。然后将next目录拷贝到库之外的目录，执行push在服务端先删除next，然后再把next拷贝回来，再次push。</p>
+</li>
+<li><p>fatal: The current branch master has no upstream branch.</p>
+<blockquote>
+<p>git push -u origin master(不要-u也可以)<br>或者<br>git add -A<br>git commit<br>git push origin master  </p>
+</blockquote>
+</li>
+</ul>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><blockquote>
+<p>hexo help #查看帮助<br>hexo init #初始化一个目录<br>hexo new “postName” #新建文章<br>hexo new page “pageName” #新建页面<br>hexo generate #生成网页，可以在 public 目录查看整个网站的文件<br>hexo server #本地预览，’Ctrl+C’关闭<br>hexo deploy #部署.deploy目录<br>hexo clean #清除缓存，<strong>强烈建议每次执行命令前先清理缓存，每次部署前先删除 .deploy 文件夹</strong><br>npm install hexo -g #安装<br>npm update hexo -g #升级<br>hexo generate –deploy<br>hexo deploy –generate<br>hexo deploy -g<br>hexo server -g<br>hexo new draft <title>  新建草稿<br>hexo publish draft <title> 发布草稿为post</title></title></p>
+</blockquote>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="http://www.jianshu.com/p/973e718e3096" target="_blank" rel="external">记录网站诞生过程-使用hexo+github pages</a><br><a href="http://www.jianshu.com/p/a791c0e00544" target="_blank" rel="external">Github-Pages-Hexo搭建博客</a><br><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="external">使用hexo，如果换了电脑怎么更新博客？</a><br><a href="http://wp.huangshiyang.com/hexo常见问题解决方案" target="_blank" rel="external">Hexo常见问题解决方案</a><br><a href="http://www.jianshu.com/p/35e197cb1273" target="_blank" rel="external">Hexo搭建Github-Pages博客填坑教程</a><br><a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">hexo你的博客</a><br><a href="http://www.jianshu.com/p/637fb282f71a" target="_blank" rel="external">GitHubPages + Hexo—详解博客搭建</a><br><a href="http://cherryblog.site" target="_blank" rel="external">Cherry’s博客</a></p>
 
       
     </div>
@@ -403,7 +484,7 @@
       
         <div class="copyright">
         <p><span>
-        <b>本文地址：</b><a href="/2017/05/14/网络编程/网络编程中send和recv常见错误梳理/" title="网络编程中send和recv常见错误梳理">http://yoursite.com/2017/05/14/网络编程/网络编程中send和recv常见错误梳理/</a><br /><b>转载请注明出处，谢谢！</b>
+        <b>本文地址：</b><a href="/2017/05/14/使用github-pages和hexo搭建博客/" title="使用github pages和hexo搭建博客">http://yoursite.com/2017/05/14/使用github-pages和hexo搭建博客/</a><br /><b>转载请注明出处，谢谢！</b>
         </span></p>
         </div>
       
@@ -460,11 +541,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/网络/" rel="tag"># 网络</a>
-          
-            <a href="/tags/send/" rel="tag"># send</a>
-          
-            <a href="/tags/recv/" rel="tag"># recv</a>
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
           
         </div>
       
@@ -477,8 +554,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/14/网络编程/从tcp原理角度理解Broken-pipe和Connection-reset-by-peer的区别/" rel="next" title="从tcp原理角度理解Broken pipe和Connection reset by peer的区别">
-                <i class="fa fa-chevron-left"></i> 从tcp原理角度理解Broken pipe和Connection reset by peer的区别
+              <a href="/2017/05/14/hexo/使用github-pages和hexo搭建博客/" rel="next" title="使用github pages和hexo搭建博客">
+                <i class="fa fa-chevron-left"></i> 使用github pages和hexo搭建博客
               </a>
             
           </div>
@@ -486,6 +563,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/14/网络编程/同步、异步、阻塞及非阻塞/" rel="prev" title="同步、异步、阻塞及非阻塞">
+                同步、异步、阻塞及非阻塞 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -654,7 +735,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#另外在java中，会有一些异常，从网上摘录如下"><span class="nav-number">1.</span> <span class="nav-text">另外在java中，会有一些异常，从网上摘录如下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它异常"><span class="nav-number">2.</span> <span class="nav-text">其它异常</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装及配置github-sshkey"><span class="nav-number">1.</span> <span class="nav-text">安装及配置github sshkey</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装及配置hexo"><span class="nav-number">2.</span> <span class="nav-text">安装及配置hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装及配置oschina"><span class="nav-number">3.</span> <span class="nav-text">安装及配置oschina</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日常使用"><span class="nav-number">4.</span> <span class="nav-text">日常使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#恢复资料"><span class="nav-number">5.</span> <span class="nav-text">恢复资料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-amp-A"><span class="nav-number">6.</span> <span class="nav-text">Q&A</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">7.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">8.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
