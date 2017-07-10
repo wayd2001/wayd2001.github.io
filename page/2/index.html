@@ -274,6 +274,173 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://xiaoxiaoqiang.win/2017/05/14/网络编程/同步、异步、阻塞及非阻塞/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小小强">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/logo/icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小小强的部落">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/14/网络编程/同步、异步、阻塞及非阻塞/" itemprop="url">同步、异步、阻塞及非阻塞</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-14T17:38:29+08:00">
+                2017-05-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络编程/" itemprop="url" rel="index">
+                    <span itemprop="name">网络编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>同步、异步、阻塞及非阻塞是开发中经常遇到的概念，有区别又有联系，极其容易混淆。在深入理解这些概念的时候，需要借助现实中的例子来辅助。</p>
+<h2 id="概念解释"><a href="#概念解释" class="headerlink" title="概念解释"></a>概念解释</h2><ul>
+<li>同步<br>在调用操作未完成前，调用者一直在等待这个结果，不得到结果不返回。</li>
+<li>异步<br>在调用后，调用者直接返回，不主动获取和等待调用结果。而是被调用者通过通知或者回调函数来通知调用者。</li>
+<li>阻塞<br>调用时，由于被调用者状态未就绪，导致调用线程被挂起。<strong>状态未就绪并不是指调用者运行缓慢，时间久。</strong></li>
+<li>非阻塞<br>调用时，被调用者如果就绪则立即返回结果，如果未就绪也会返回一个错误值，告诉调用者当前的状态。调用者可根据错误值选择再次调用，还是执行异常处理。</li>
+</ul>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>在上面的表述中，很容易发现同步和阻塞，异步和非阻塞是一个概念（也可能我表达能力差。哈哈）。实际上，同步异步、阻塞非阻塞分别是不同维度的概念：</p>
+<p><strong>同步异步侧重于描述调用者进行调用之后的行为（以io读写操作为例）:</strong></p>
+<ol>
+<li>同步在调用后，会主动去获取调用结果，无论是以阻塞方式还是非阻塞轮询方式，调用者需要自己去调用send和recv读写数据。所以像select，epoll等都是同步方式。</li>
+<li>异步在调用后，就继续执行其它的工作，读取数据的工作由内核去操作，当数据已经就绪并拷贝到用户空间后，通过通知或者回调函数的形式通知调用者进行数据处理。像mina就是典型的异步模式。<br>由此可见，同步异步的区别在于<strong>同步需要调用者读写数据，而异步不需要读写数据</strong></li>
+</ol>
+<p><strong>阻塞和非阻塞侧重于描述被调用者在执行时所处于的状态：</strong></p>
+<ol>
+<li>阻塞操作是被调用者由于数据未准备好，如内核发送缓冲区满或者接收缓冲区空等原因，导致send和recv接口无法返回，此时操作系统将读写线程挂起，让出时间片。<br><strong>注意：</strong>读写操作慢，并不是上文所说的阻塞情况。</li>
+<li>非阻塞操作正好相反，当数据未准备好时，会立即返回给调用者一个结果，如－1，同时设置errno，调用者根据errno判断是否要重新读取数据。</li>
+</ol>
+<h2 id="以下是网友举的例子"><a href="#以下是网友举的例子" class="headerlink" title="以下是网友举的例子:"></a>以下是网友举的例子:</h2><blockquote>
+<p>老张爱喝茶，废话不说，煮开水。<br>出场人物：老张，水壶两把（普通水壶，简称水壶；会响的水壶，简称响水壶）。<br>1 老张把水壶放到火上，立等水开。（同步阻塞）<br>老张觉得自己有点傻<br>2 老张把水壶放到火上，去客厅看电视，时不时去厨房看看水开没有。（同步非阻塞）<br>老张还是觉得自己有点傻，于是变高端了，买了把会响笛的那种水壶。水开之后，能大声发出嘀~~~~的噪音。<br>3 老张把响水壶放到火上，立等水开。（异步阻塞）<br>老张觉得这样傻等意义不大<br>4 老张把响水壶放到火上，去客厅看电视，水壶响之前不再去看它了，响了再去拿壶。（异步非阻塞）<br>老张觉得自己聪明了。<br>所谓同步异步，只是对于水壶而言。<br>普通水壶，同步；响水壶，异步。<br>虽然都能干活，但响水壶可以在自己完工之后，提示老张水开了。这是普通水壶所不能及的。<br>同步只能让调用者去轮询自己（情况2中），造成老张效率的低下。<br>所谓阻塞非阻塞，仅仅对于老张而言。<br>立等的老张，阻塞；看电视的老张，非阻塞。<br>情况1和情况3中老张就是阻塞的，媳妇喊他都不知道。虽然3中响水壶是异步的，可对于立等的老张没有太大的意义。所以一般异步是配合非阻塞使用的，这样才能发挥异步的效用。</p>
+</blockquote>
+<h2 id="常见的应用情况"><a href="#常见的应用情况" class="headerlink" title="常见的应用情况"></a>常见的应用情况</h2><p>在进行io操作时，阻塞和非阻塞都是同步的，只有一些特殊的api才是异步io。即使java的NIO也是同步操作，底层以select和epoll实现的。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2492650-3238432c22c25052.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.jpg"></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.zhihu.com/question/19732473" target="_blank" rel="external">https://www.zhihu.com/question/19732473</a></p>
+<blockquote>
+<p>既然网络上众说纷纭，不如找个权威参考一下，这个权威就是<a href="https://link.zhihu.com/?target=http%3A//book.douban.com/subject/1500149/" target="_blank" rel="external">《UNIX网络编程：卷一》**</a>第六章——I/O复用。书中向我们提及了5种类UNIX下可用的I/O模型：</p>
+<ul>
+<li>阻塞式I/O；</li>
+<li>非阻塞式I/O；</li>
+<li>I/O复用（select，poll，epoll…）；</li>
+<li>信号驱动式I/O（SIGIO）；</li>
+<li>异步I/O（POSIX的aio_系列函数）；<br><strong>阻塞式I/O模型</strong>：默认情况下，所有套接字都是阻塞的。怎么理解？先理解这么个流程，一个输入操作通常包括两个不同阶段：<br>（1）等待数据准备好；（2）从内核向进程复制数据。<br>对于一个套接字上的输入操作，第一步通常涉及等待数据从网络中到达。当所有等待分组到达时，它被复制到内核中的某个缓冲区。第二步就是把数据从内核缓冲区复制到应用程序缓冲区。 好，下面我们以阻塞套接字的recvfrom的的调用图来说明阻塞<br><img src="http://upload-images.jianshu.io/upload_images/2492650-1b3c126de61ada86.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.jpg"><br>标红的这部分过程就是阻塞，直到阻塞结束recvfrom才能返回。<br><strong>非阻塞式I/O</strong>： 以下这句话很重要：进程把一个套接字设置成非阻塞是在通知内核，当所请求的I/O操作非得把本进程投入睡眠才能完成时，不要把进程投入睡眠，而是返回一个错误。看看非阻塞的套接字的recvfrom操作如何进行<br><img src="http://upload-images.jianshu.io/upload_images/2492650-6d153e08e7e7a714.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.jpg"><br>可以看出recvfrom总是立即返回。<br><strong>I/O多路复用</strong>：虽然I/O多路复用的函数也是阻塞的，但是其与以上两种还是有不同的，I/O多路复用是阻塞在select，epoll这样的系统调用之上，而没有阻塞在真正的I/O系统调用如recvfrom之上。如图<br><img src="http://upload-images.jianshu.io/upload_images/2492650-bcb961f56eea6867.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3.jpg"><br><strong>信号驱动式I/O</strong>：用的很少，就不做讲解了。直接上图<br><img src="http://upload-images.jianshu.io/upload_images/2492650-562b6639f60c9277.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="4.jpg"><br><strong>异步I/O</strong>：这类函数的工作机制是告知内核启动某个操作，并让内核在整个操作（包括将数据从内核拷贝到用户空间）完成后通知我们。如图：<br><img src="http://upload-images.jianshu.io/upload_images/2492650-f82b9319d7d78b09.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="5.jpg"><br>注意红线标记处说明在调用时就可以立马返回，等函数操作完成会通知我们。等等，大家一定要问了，同步这个概念你怎么没涉及啊？别急，您先看总结。 其实前四种I/O模型都是同步I/O操作，他们的区别在于第一阶段，而他们的第二阶段是一样的：在数据从内核复制到应用缓冲区期间（用户空间），进程阻塞于recvfrom调用。相反，异步I/O模型在这两个阶段都要处理。<br><img src="http://upload-images.jianshu.io/upload_images/2492650-7a5b23773136962e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="6.jpg"><br>再看POSIX对这两个术语的定义：<br>同步I/O操作：导致请求进程阻塞，直到I/O操作完成；<br>异步I/O操作：不导致请求进程阻塞。<br>好，下面我用我的语言来总结一下阻塞，非阻塞，同步，异步<br>阻塞，非阻塞：进程/线程要访问的数据是否就绪，进程/线程是否需要等待；<br>同步，异步：访问数据的方式，同步需要主动读写数据，在读写数据的过程中还是会阻塞；异步只需要I/O操作完成的通知，并不主动读写数据，由操作系统内核完成数据的读写。</li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://xiaoxiaoqiang.win/2017/05/13/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -434,7 +601,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
