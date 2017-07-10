@@ -5,14 +5,19 @@
     
   <url>
     <loc>http://xiaoxiaoqiang.win/2017/07/10/test/</loc>
-    <lastmod>2017-07-10T15:23:50.000Z</lastmod>
+    <lastmod>2017-07-10T15:25:40.000Z</lastmod>
     <data>
         <display>
         <title>test</title>
         <pubTime>2017-07-10T15:23:50.000Z</pubTime>
         
+        <tag>LintCode</tag>
+         
          
            
+             
+              <breadCrumb title="LintCode" url="http://xiaoxiaoqiang.win/categories/LintCode/"/>
+          
         </display>
     </data>
     </url>
