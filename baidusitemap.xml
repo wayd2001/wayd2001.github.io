@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://xiaoxiaoqiang.win/2017/06/29/hexo/%E4%BD%BF%E7%94%A8github-pages%E5%92%8Chexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2017-07-11T16:18:29.000Z</lastmod>
+    <data>
+        <display>
+        <title>使用github-pages和hexo搭建博客</title>
+        <pubTime>2017-06-29T13:51:07.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="http://xiaoxiaoqiang.win/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xiaoxiaoqiang.win/2017/05/14/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B8%ADsend%E5%92%8Crecv%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%A2%B3%E7%90%86/</loc>
     <lastmod>2017-07-11T16:13:45.000Z</lastmod>
     <data>
@@ -210,26 +230,6 @@
         <display>
         <title>github pages 绑定阿里云域名</title>
         <pubTime>2017-07-08T14:01:23.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="http://xiaoxiaoqiang.win/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xiaoxiaoqiang.win/2017/06/29/hexo/%E4%BD%BF%E7%94%A8github-pages%E5%92%8Chexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2017-06-29T14:21:16.000Z</lastmod>
-    <data>
-        <display>
-        <title>使用github-pages和hexo搭建博客</title>
-        <pubTime>2017-06-29T13:51:07.000Z</pubTime>
         
         <tag>hexo</tag>
          
