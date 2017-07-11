@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://xiaoxiaoqiang.win/2017/07/05/LintCode/容易-167-链表求和/index.html">
 <meta property="og:site_name" content="小小强的部落">
 <meta property="og:description" content="我是小小强，这是我的第8篇原创文章，阅读需要大约10分钟。    题目LintCode:链表求和 描述你有两个用链表代表的整数，其中每个节点包含一个数字。数字存储按照在原来整数中相反的顺序，使得第一个数字位于链表的开头。写出一个函数将两个整数相加，用链表形式返回和。 样例给出两个链表 3-&amp;gt;1-&amp;gt;5-&amp;gt;null和5-&amp;gt;9-&amp;gt;2-&amp;gt;null，返回8-&amp;gt;0-&amp;">
-<meta property="og:updated_time" content="2017-07-05T15:13:47.000Z">
+<meta property="og:updated_time" content="2017-07-11T16:08:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[容易]167.链表求和">
 <meta name="twitter:description" content="我是小小强，这是我的第8篇原创文章，阅读需要大约10分钟。    题目LintCode:链表求和 描述你有两个用链表代表的整数，其中每个节点包含一个数字。数字存储按照在原来整数中相反的顺序，使得第一个数字位于链表的开头。写出一个函数将两个整数相加，用链表形式返回和。 样例给出两个链表 3-&amp;gt;1-&amp;gt;5-&amp;gt;null和5-&amp;gt;9-&amp;gt;2-&amp;gt;null，返回8-&amp;gt;0-&amp;">
@@ -365,6 +365,7 @@
 <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>LintCode:<a href="http://www.lintcode.com/zh-cn/problem/add-two-numbers/" target="_blank" rel="external">链表求和</a></p>
 <h1 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h1><p>你有两个用链表代表的整数，其中每个节点包含一个数字。数字存储按照在原来整数中相反的顺序，使得第一个数字位于链表的开头。写出一个函数将两个整数相加，用链表形式返回和。</p>
 <h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><p>给出两个链表 <code>3-&gt;1-&gt;5-&gt;null</code>和<code>5-&gt;9-&gt;2-&gt;null</code>，返回<code>8-&gt;0-&gt;8-&gt;null</code></p>
+<a id="more"></a>
 <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>题目中要求从链表头节点开始，按位相加，同时进位。那就可以构造一个链表，存放相加结果，同时用一个临时变量存放链表相加之和，如果大于10，则设置进位标志。最后结束时判断进位标志是否为0，不为0，则需要再进位。</p>
 <h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><ol>
 <li><p>java实现</p>

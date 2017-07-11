@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://xiaoxiaoqiang.win/2017/05/14/网络编程/网络编程中send和recv常见错误梳理/index.html">
 <meta property="og:site_name" content="小小强的部落">
 <meta property="og:description" content="网络开发时，调用send和recv进行数据收发，经常会遇到一些异常问题，导致返回值为－1，errno被置为某个特殊值。这时就需要我们根据经验，结合实际情况判断问题症结，这样才能快速定位和处理问题。下面总结了一些开发中，经常会遇到的问题。  Connection reset by peer这个错误一般是对端已经关闭连接（处于关闭连接过程中），本端依然向对端发送数据导致。  Broken pipe这个">
-<meta property="og:updated_time" content="2017-05-14T14:05:22.000Z">
+<meta property="og:updated_time" content="2017-07-11T16:13:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络编程中send和recv常见错误梳理">
 <meta name="twitter:description" content="网络开发时，调用send和recv进行数据收发，经常会遇到一些异常问题，导致返回值为－1，errno被置为某个特殊值。这时就需要我们根据经验，结合实际情况判断问题症结，这样才能快速定位和处理问题。下面总结了一些开发中，经常会遇到的问题。  Connection reset by peer这个错误一般是对端已经关闭连接（处于关闭连接过程中），本端依然向对端发送数据导致。  Broken pipe这个">
@@ -366,6 +366,9 @@
 </li>
 <li><p><strong>Broken pipe</strong><br>这个错误一般是向一个已经关闭的套接字中写数据，导致管道错误。默认操作系统会终止进程，在c程序中需要将该信号忽略。<br>当向一个已经关闭的链接发送数据时，由于处于tcp的状态不同，可能会导致上面两种不同的结果。</p>
 </li>
+</ul>
+<a id="more"></a>
+<ul>
 <li><p><strong>errno为EAGAIN EWOULDBLOCK EINTR</strong><br>这个是程序中当send和recv返回－1时，判断errno如果为上述值，需要再次send和recv。有下面几个情况：</p>
 <ol>
 <li>用于非阻塞套接字</li>

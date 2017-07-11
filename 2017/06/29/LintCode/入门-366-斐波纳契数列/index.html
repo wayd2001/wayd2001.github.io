@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="我是小小强，这是我的第4篇原创文章，阅读需要大约10分钟。    题目LintCode:斐波纳契数列 描述查找斐波纳契数列中第 N 个数。所谓的斐波纳契数列是指：前2个数是 0 和1 。第 i 个数是第i-1个数和第i-2 个数的和。斐波纳契数列的前10个数字是：0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ...   样例给定 1，返回0给定 2，返回1给定10，返回 34 实">
+<meta name="description" content="我是小小强，这是我的第4篇原创文章，阅读需要大约10分钟。    题目LintCode:斐波纳契数列 描述查找斐波纳契数列中第 N 个数。所谓的斐波纳契数列是指：前2个数是 0 和1 。第 i 个数是第i-1个数和第i-2 个数的和。斐波纳契数列的前10个数字是：0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ...   样例给定 1，返回0给定 2，返回1给定10，返回 34">
 <meta name="keywords" content="LintCode,算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[入门]366.斐波纳契数列">
 <meta property="og:url" content="http://xiaoxiaoqiang.win/2017/06/29/LintCode/入门-366-斐波纳契数列/index.html">
 <meta property="og:site_name" content="小小强的部落">
-<meta property="og:description" content="我是小小强，这是我的第4篇原创文章，阅读需要大约10分钟。    题目LintCode:斐波纳契数列 描述查找斐波纳契数列中第 N 个数。所谓的斐波纳契数列是指：前2个数是 0 和1 。第 i 个数是第i-1个数和第i-2 个数的和。斐波纳契数列的前10个数字是：0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ...   样例给定 1，返回0给定 2，返回1给定10，返回 34 实">
-<meta property="og:updated_time" content="2017-06-29T14:16:43.000Z">
+<meta property="og:description" content="我是小小强，这是我的第4篇原创文章，阅读需要大约10分钟。    题目LintCode:斐波纳契数列 描述查找斐波纳契数列中第 N 个数。所谓的斐波纳契数列是指：前2个数是 0 和1 。第 i 个数是第i-1个数和第i-2 个数的和。斐波纳契数列的前10个数字是：0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ...   样例给定 1，返回0给定 2，返回1给定10，返回 34">
+<meta property="og:updated_time" content="2017-07-11T16:08:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[入门]366.斐波纳契数列">
-<meta name="twitter:description" content="我是小小强，这是我的第4篇原创文章，阅读需要大约10分钟。    题目LintCode:斐波纳契数列 描述查找斐波纳契数列中第 N 个数。所谓的斐波纳契数列是指：前2个数是 0 和1 。第 i 个数是第i-1个数和第i-2 个数的和。斐波纳契数列的前10个数字是：0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ...   样例给定 1，返回0给定 2，返回1给定10，返回 34 实">
+<meta name="twitter:description" content="我是小小强，这是我的第4篇原创文章，阅读需要大约10分钟。    题目LintCode:斐波纳契数列 描述查找斐波纳契数列中第 N 个数。所谓的斐波纳契数列是指：前2个数是 0 和1 。第 i 个数是第i-1个数和第i-2 个数的和。斐波纳契数列的前10个数字是：0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ...   样例给定 1，返回0给定 2，返回1给定10，返回 34">
 
 
 
@@ -365,6 +365,7 @@
 <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>LintCode:<a href="http://www.lintcode.com/zh-cn/problem/fibonacci/" target="_blank" rel="external">斐波纳契数列</a></p>
 <h1 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h1><p>查找<code>斐波纳契数列</code>中第 N 个数。<br>所谓的<code>斐波纳契数列</code>是指：<br>前2个数是 <code>0</code> 和<code>1</code> 。<br>第 i 个数是第<code>i-1</code>个数和第<code>i-2</code> 个数的和。<br>斐波纳契数列的前10个数字是：<br><code>0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ...</code>  </p>
 <h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><p>给定 <code>1</code>，返回<code>0</code><br>给定 <code>2</code>，返回<code>1</code><br>给定<code>10</code>，返回 <code>34</code></p>
+<a id="more"></a>
 <h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><h2 id="递归实现"><a href="#递归实现" class="headerlink" title="递归实现"></a>递归实现</h2><ol>
 <li><p>java代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public int fibonacci(int n) &#123;</div><div class="line">        if (n == 1) &#123;</div><div class="line">            return 0;</div><div class="line">        &#125; else if (n == 2) &#123;</div><div class="line">            return 1;</div><div class="line">        &#125; else &#123;</div><div class="line">            return fibonacci(n - 1) + fibonacci(n - 2);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>

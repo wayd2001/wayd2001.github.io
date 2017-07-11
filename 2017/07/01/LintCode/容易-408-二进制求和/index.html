@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="我是小小强，这是我的第6篇原创文章，阅读需要大约10分钟。    题目LintCode:二进制求和 描述给定两个二进制字符串，返回他们的和（用二进制表示）。 样例a = 11b = 1返回 100   思路二进制相加，主要考虑进位的情况，每位在进行相加之后，要判断之前有无进位的情况，如果有，本位要进行加1处理，同时还要考虑是否要再次向高位进位。相加结果的二进制串长度是有可能超过原数的。最直接的方法">
+<meta name="description" content="我是小小强，这是我的第6篇原创文章，阅读需要大约10分钟。    题目LintCode:二进制求和 描述给定两个二进制字符串，返回他们的和（用二进制表示）。 样例a = 11b = 1返回 100">
 <meta name="keywords" content="LintCode,算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[容易]408.二进制求和">
 <meta property="og:url" content="http://xiaoxiaoqiang.win/2017/07/01/LintCode/容易-408-二进制求和/index.html">
 <meta property="og:site_name" content="小小强的部落">
-<meta property="og:description" content="我是小小强，这是我的第6篇原创文章，阅读需要大约10分钟。    题目LintCode:二进制求和 描述给定两个二进制字符串，返回他们的和（用二进制表示）。 样例a = 11b = 1返回 100   思路二进制相加，主要考虑进位的情况，每位在进行相加之后，要判断之前有无进位的情况，如果有，本位要进行加1处理，同时还要考虑是否要再次向高位进位。相加结果的二进制串长度是有可能超过原数的。最直接的方法">
-<meta property="og:updated_time" content="2017-07-01T03:37:01.000Z">
+<meta property="og:description" content="我是小小强，这是我的第6篇原创文章，阅读需要大约10分钟。    题目LintCode:二进制求和 描述给定两个二进制字符串，返回他们的和（用二进制表示）。 样例a = 11b = 1返回 100">
+<meta property="og:updated_time" content="2017-07-11T16:07:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[容易]408.二进制求和">
-<meta name="twitter:description" content="我是小小强，这是我的第6篇原创文章，阅读需要大约10分钟。    题目LintCode:二进制求和 描述给定两个二进制字符串，返回他们的和（用二进制表示）。 样例a = 11b = 1返回 100   思路二进制相加，主要考虑进位的情况，每位在进行相加之后，要判断之前有无进位的情况，如果有，本位要进行加1处理，同时还要考虑是否要再次向高位进位。相加结果的二进制串长度是有可能超过原数的。最直接的方法">
+<meta name="twitter:description" content="我是小小强，这是我的第6篇原创文章，阅读需要大约10分钟。    题目LintCode:二进制求和 描述给定两个二进制字符串，返回他们的和（用二进制表示）。 样例a = 11b = 1返回 100">
 
 
 
@@ -365,6 +365,7 @@
 <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>LintCode:<a href="http://www.lintcode.com/zh-cn/problem/add-binary/" target="_blank" rel="external">二进制求和</a></p>
 <h1 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h1><p>给定两个二进制字符串，返回他们的和（用二进制表示）。</p>
 <h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><p>a = 11<br>b = 1<br>返回 100  </p>
+<a id="more"></a>
 <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>二进制相加，主要考虑进位的情况，每位在进行相加之后，要判断之前有无进位的情况，如果有，本位要进行加1处理，同时还要考虑是否要再次向高位进位。相加结果的二进制串长度是有可能超过原数的。<br>最直接的方法将二进制串转换为整数，进行相加，然后将结果再转换为二进制串。</p>
 <h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><h2 id="非递归实现"><a href="#非递归实现" class="headerlink" title="非递归实现"></a>非递归实现</h2><ol>
 <li><p>java实现</p>

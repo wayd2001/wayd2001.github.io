@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="我是小小强，这是我的第5篇原创文章，阅读需要大约10分钟。    题目LintCode:A+B问题 描述给出两个整数a和b, 求他们的和, 但不能使用+ 等数学运算符。  说明a和b都是 32位 整数么？是的我可以使用位运算符么？当然可以    样例如果a=1并且b=2，返回3 思路题目要求不可以使用加减乘除四则运算，那肯定是在移位或者位运算上做文章。经过分析，两个整数a和b的加法操作，可以等效于">
+<meta name="description" content="我是小小强，这是我的第5篇原创文章，阅读需要大约10分钟。    题目LintCode:A+B问题 描述给出两个整数a和b, 求他们的和, 但不能使用+ 等数学运算符。  说明a和b都是 32位 整数么？是的我可以使用位运算符么？当然可以    样例如果a=1并且b=2，返回3">
 <meta name="keywords" content="LintCode,算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[容易]1.A+B问题">
 <meta property="og:url" content="http://xiaoxiaoqiang.win/2017/06/29/LintCode/容易-1-A-B问题/index.html">
 <meta property="og:site_name" content="小小强的部落">
-<meta property="og:description" content="我是小小强，这是我的第5篇原创文章，阅读需要大约10分钟。    题目LintCode:A+B问题 描述给出两个整数a和b, 求他们的和, 但不能使用+ 等数学运算符。  说明a和b都是 32位 整数么？是的我可以使用位运算符么？当然可以    样例如果a=1并且b=2，返回3 思路题目要求不可以使用加减乘除四则运算，那肯定是在移位或者位运算上做文章。经过分析，两个整数a和b的加法操作，可以等效于">
-<meta property="og:updated_time" content="2017-06-29T14:18:36.000Z">
+<meta property="og:description" content="我是小小强，这是我的第5篇原创文章，阅读需要大约10分钟。    题目LintCode:A+B问题 描述给出两个整数a和b, 求他们的和, 但不能使用+ 等数学运算符。  说明a和b都是 32位 整数么？是的我可以使用位运算符么？当然可以    样例如果a=1并且b=2，返回3">
+<meta property="og:updated_time" content="2017-07-11T16:08:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[容易]1.A+B问题">
-<meta name="twitter:description" content="我是小小强，这是我的第5篇原创文章，阅读需要大约10分钟。    题目LintCode:A+B问题 描述给出两个整数a和b, 求他们的和, 但不能使用+ 等数学运算符。  说明a和b都是 32位 整数么？是的我可以使用位运算符么？当然可以    样例如果a=1并且b=2，返回3 思路题目要求不可以使用加减乘除四则运算，那肯定是在移位或者位运算上做文章。经过分析，两个整数a和b的加法操作，可以等效于">
+<meta name="twitter:description" content="我是小小强，这是我的第5篇原创文章，阅读需要大约10分钟。    题目LintCode:A+B问题 描述给出两个整数a和b, 求他们的和, 但不能使用+ 等数学运算符。  说明a和b都是 32位 整数么？是的我可以使用位运算符么？当然可以    样例如果a=1并且b=2，返回3">
 
 
 
@@ -368,6 +368,7 @@
 <li>说明<br>a和b都是 32位 整数么？<br>是的<br>我可以使用位运算符么？<br>当然可以  </li>
 </ul>
 <h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><p>如果<code>a=1</code>并且<code>b=2</code>，返回<code>3</code></p>
+<a id="more"></a>
 <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>题目要求不可以使用加减乘除四则运算，那肯定是在移位或者位运算上做文章。经过分析，两个整数<code>a</code>和<code>b</code>的加法操作，可以等效于<code>(a&amp;b)&lt;&lt;1</code>和<code>a^b</code>相加，也就是进位值和非进位值，然后又可以继续通过这种操作进行运算，直到达到一个不满足的条件（也就是不在进位）为止。这就可以借助循环或者递归操作，关键在于找到结束循环和递归的条件。对于<code>a&amp;b</code>来说，显然是有可能不在进位，也就是值为0的，这就是一个有效的判断条件。</p>
 <h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><h2 id="递归实现"><a href="#递归实现" class="headerlink" title="递归实现"></a>递归实现</h2><ol>
 <li><p>java代码</p>
