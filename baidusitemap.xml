@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://xiaoxiaoqiang.win/2017/07/11/hexo/%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E7%99%BE%E5%BA%A6%E5%92%8C%E8%B0%B7%E6%AD%8C%E6%94%B6%E5%BD%95/</loc>
+    <lastmod>2017-07-13T13:09:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>博客提交百度和谷歌收录</title>
+        <pubTime>2017-07-11T15:55:55.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="http://xiaoxiaoqiang.win/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xiaoxiaoqiang.win/2017/06/29/hexo/%E4%BD%BF%E7%94%A8github-pages%E5%92%8Chexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2017-07-11T16:18:29.000Z</lastmod>
     <data>
@@ -197,26 +217,6 @@
            
              
               <breadCrumb title="LintCode" url="http://xiaoxiaoqiang.win/categories/LintCode/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xiaoxiaoqiang.win/2017/07/11/hexo/%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E7%99%BE%E5%BA%A6%E5%92%8C%E8%B0%B7%E6%AD%8C%E6%94%B6%E5%BD%95/</loc>
-    <lastmod>2017-07-11T16:03:07.000Z</lastmod>
-    <data>
-        <display>
-        <title>博客提交百度和谷歌收录</title>
-        <pubTime>2017-07-11T15:55:55.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="http://xiaoxiaoqiang.win/categories/hexo/"/>
           
         </display>
     </data>
