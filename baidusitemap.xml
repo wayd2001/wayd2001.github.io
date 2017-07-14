@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://xiaoxiaoqiang.win/2017/07/14/hexo/%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E5%90%8C%E6%97%B6%E6%89%98%E7%AE%A1%E5%9C%A8github%EF%BC%8Coschina%E5%92%8Ccoding/</loc>
-    <lastmod>2017-07-14T14:42:52.000Z</lastmod>
+    <lastmod>2017-07-14T14:46:56.000Z</lastmod>
     <data>
         <display>
         <title>将hexo博客同时托管在github，oschina和coding</title>
@@ -24,28 +24,8 @@
 
     
   <url>
-    <loc>http://xiaoxiaoqiang.win/2017/07/11/hexo/%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E7%99%BE%E5%BA%A6%E5%92%8C%E8%B0%B7%E6%AD%8C%E6%94%B6%E5%BD%95/</loc>
-    <lastmod>2017-07-14T14:42:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>博客提交百度和谷歌收录</title>
-        <pubTime>2017-07-11T15:55:55.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="http://xiaoxiaoqiang.win/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xiaoxiaoqiang.win/2017/07/08/hexo/github-pages-%E7%BB%91%E5%AE%9A%E9%98%BF%E9%87%8C%E4%BA%91%E5%9F%9F%E5%90%8D/</loc>
-    <lastmod>2017-07-14T14:41:19.000Z</lastmod>
+    <lastmod>2017-07-14T14:46:31.000Z</lastmod>
     <data>
         <display>
         <title>github pages 绑定阿里云域名</title>
@@ -64,8 +44,28 @@
 
     
   <url>
+    <loc>http://xiaoxiaoqiang.win/2017/07/11/hexo/%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E7%99%BE%E5%BA%A6%E5%92%8C%E8%B0%B7%E6%AD%8C%E6%94%B6%E5%BD%95/</loc>
+    <lastmod>2017-07-14T14:46:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>博客提交百度和谷歌收录</title>
+        <pubTime>2017-07-11T15:55:55.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="http://xiaoxiaoqiang.win/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xiaoxiaoqiang.win/2017/06/29/hexo/%E4%BD%BF%E7%94%A8github-pages%E5%92%8Chexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2017-07-14T14:40:41.000Z</lastmod>
+    <lastmod>2017-07-14T14:46:08.000Z</lastmod>
     <data>
         <display>
         <title>使用github-pages和hexo搭建博客</title>

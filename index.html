@@ -367,6 +367,7 @@
             <p>我是小小强，这是我的第11篇原创文章，阅读需要大约15分钟。  </p>
 <hr>
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>目前个人博客已经完成hexo搭建、在百度及谷歌收录。截止本文写作时，谷歌可收录博客，百度还无法搜索。由于github禁止百度爬虫抓取，所以需要想办法将博客部署到其他的站点上去。<br>经过考察，oschina目前无法绑定域名，coding可以；github私有仓库收费，oschina和coding不收费。所以经过一番折腾之后，目前的博客部署情况如下：</p>
+<p>&lt;!—-more—-&gt;</p>
 <ul>
 <li>博客源码文件部署在oschina和coding的私有仓库上，本地执行<code>git add</code>,<code>git commit</code>和<code>git push</code>后会推送到对应仓库上  </li>
 <li>博客产生的静态文件部署在github、coding和oschina的公有仓库上。本地执行<code>hexo cl;hexo g -d</code>之后会自动推送到对应的仓库上。  </li>
@@ -550,7 +551,7 @@
 <hr>
 <h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>在参考前面的文章，完成博客搭建、域名绑定，但总觉得还缺了点什么。尤其是写了很多东西之后，在互联网上无法被搜索到，实在让人郁闷。尤其对于github来说，百度是无法抓取github内容的。因此，就想到可以自动提交网站给百度或者谷歌。</p>
 <h2 id="确认博客是否被收录"><a href="#确认博客是否被收录" class="headerlink" title="确认博客是否被收录"></a>确认博客是否被收录</h2><p>在百度或者谷歌搜索框输入<code>site:xiaoxiaoqiang.win</code>，如果能搜索到说明被收录了，否则就没有。<br><img src="http://ossysbflp.bkt.clouddn.com/baidu-收录博客.png" alt=""></p>
-<p>&lt;!—more—&gt;</p>
+<p>&lt;!—-more—-&gt;</p>
 <h2 id="百度收录网站"><a href="#百度收录网站" class="headerlink" title="百度收录网站"></a>百度收录网站</h2><p>下面以个人网站xiaoxiaoqiang.win来说明。</p>
 <ol>
 <li>登录<a href="http://zhanzhang.baidu.com" target="_blank" rel="external">百度站长搜索引擎入口</a>，增加个人站点。  </li>
@@ -770,7 +771,7 @@
 <hr>
 <h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>按照<a href="http://www.jianshu.com/p/b34db6811f45" target="_blank" rel="external">使用github pages和hexo搭建博客</a>完成博客的搭建。</p>
 <h2 id="注册阿里云域名"><a href="#注册阿里云域名" class="headerlink" title="注册阿里云域名"></a>注册阿里云域名</h2><p>这个比较简单了，在<a href="https://wanwang.aliyun.com" target="_blank" rel="external">阿里云</a>申请一个域名，申请域名时需要创建一个信息模版，按要求创建模版，在申请域名时选择这个模版即可。缴费成功后，大概10分钟左右可看到域名已经通过审核。如域名为xxx.com</p>
-<p>&lt;!—more—&gt;</p>
+<p>&lt;!-—more—-&gt;</p>
 <h2 id="创建CNAME文件"><a href="#创建CNAME文件" class="headerlink" title="创建CNAME文件"></a>创建CNAME文件</h2><p>登录github版本库xx.github.io，在根目录下创建CNAME文件，内容为  </p>
 <blockquote>
 <p>xxx.com  </p>
@@ -1641,7 +1642,7 @@ A    www    默认    a.b.c.d     --    10分钟        修改|暂停|删除|备
 <li>分别备份博客源文件及生成的静态页面，前者的仓库应当是私有的</li>
 <li>可免密推送仓库</li>
 </ul>
-<p>&lt;!—more—&gt;</p>
+<p>&lt;!—-more-—&gt;</p>
 <h3 id="安装及配置github-sshkey"><a href="#安装及配置github-sshkey" class="headerlink" title="安装及配置github sshkey"></a>安装及配置github sshkey</h3><p><strong>前提</strong>:本地具备git环境</p>
 <ul>
 <li>注册github并创建仓库<br>创建xx.github.io.git仓库(xx为github的用户名，如果不适用用户名创建仓库，会导致博客显示异常)，设置master为默认分支，同时本地执行：<blockquote>
