@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="我是小小强，这是我的第4篇原创文章，阅读需要大约10分钟。    三思而行:在真正操作前，学习了网上的资料，逐步明确搭建博客的目的。  使用github pages 及hexo完成博客 分别备份博客源文件及生成的静态页面，前者的仓库应当是私有的 可免密推送仓库  安装及配置github sshkey前提:本地具备git环境  注册github并创建仓库创建xx.github.io.git仓库(xx">
+<meta name="description" content="我是小小强，这是我的第4篇原创文章，阅读需要大约10分钟。    三思而行:在真正操作前，学习了网上的资料，逐步明确搭建博客的目的。  使用github pages 及hexo完成博客 分别备份博客源文件及生成的静态页面，前者的仓库应当是私有的 可免密推送仓库  &amp;lt;!—more—&amp;gt; 安装及配置github sshkey前提:本地具备git环境  注册github并创建仓库创建xx.gi">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用github-pages和hexo搭建博客">
 <meta property="og:url" content="http://xiaoxiaoqiang.win/2017/06/29/hexo/使用github-pages和hexo搭建博客/index.html">
 <meta property="og:site_name" content="小小强的部落">
-<meta property="og:description" content="我是小小强，这是我的第4篇原创文章，阅读需要大约10分钟。    三思而行:在真正操作前，学习了网上的资料，逐步明确搭建博客的目的。  使用github pages 及hexo完成博客 分别备份博客源文件及生成的静态页面，前者的仓库应当是私有的 可免密推送仓库  安装及配置github sshkey前提:本地具备git环境  注册github并创建仓库创建xx.github.io.git仓库(xx">
-<meta property="og:updated_time" content="2017-07-11T16:18:29.000Z">
+<meta property="og:description" content="我是小小强，这是我的第4篇原创文章，阅读需要大约10分钟。    三思而行:在真正操作前，学习了网上的资料，逐步明确搭建博客的目的。  使用github pages 及hexo完成博客 分别备份博客源文件及生成的静态页面，前者的仓库应当是私有的 可免密推送仓库  &amp;lt;!—more—&amp;gt; 安装及配置github sshkey前提:本地具备git环境  注册github并创建仓库创建xx.gi">
+<meta property="og:updated_time" content="2017-07-14T14:40:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用github-pages和hexo搭建博客">
-<meta name="twitter:description" content="我是小小强，这是我的第4篇原创文章，阅读需要大约10分钟。    三思而行:在真正操作前，学习了网上的资料，逐步明确搭建博客的目的。  使用github pages 及hexo完成博客 分别备份博客源文件及生成的静态页面，前者的仓库应当是私有的 可免密推送仓库  安装及配置github sshkey前提:本地具备git环境  注册github并创建仓库创建xx.github.io.git仓库(xx">
+<meta name="twitter:description" content="我是小小强，这是我的第4篇原创文章，阅读需要大约10分钟。    三思而行:在真正操作前，学习了网上的资料，逐步明确搭建博客的目的。  使用github pages 及hexo完成博客 分别备份博客源文件及生成的静态页面，前者的仓库应当是私有的 可免密推送仓库  &amp;lt;!—more—&amp;gt; 安装及配置github sshkey前提:本地具备git环境  注册github并创建仓库创建xx.gi">
 
 
 
@@ -368,18 +368,18 @@
 <li>分别备份博客源文件及生成的静态页面，前者的仓库应当是私有的</li>
 <li>可免密推送仓库</li>
 </ul>
+<p>&lt;!—more—&gt;</p>
 <h3 id="安装及配置github-sshkey"><a href="#安装及配置github-sshkey" class="headerlink" title="安装及配置github sshkey"></a>安装及配置github sshkey</h3><p><strong>前提</strong>:本地具备git环境</p>
 <ul>
-<li>注册github并创建仓库<br>创建xx.github.io.git仓库(xx为github的昵称)，设置master为默认分支，同时本地执行：<blockquote>
+<li>注册github并创建仓库<br>创建xx.github.io.git仓库(xx为github的用户名，如果不适用用户名创建仓库，会导致博客显示异常)，设置master为默认分支，同时本地执行：<blockquote>
 <p>cd .ssh<br>ssh-keygen -t rsa -C “xxx@163.com”</p>
 </blockquote>
 </li>
 </ul>
-<p>复制产生的id_rsa.pub内容到github上，执行如下命令测试是否成功：</p>
+<p>同时设置对应的key密码sdxxx，然后复制产生的id_rsa.pub内容到github上，执行如下命令测试是否成功：</p>
 <blockquote>
 <p>ssh -T git@github.com</p>
 </blockquote>
-<a id="more"></a>
 <ul>
 <li>配置多用户登录<br>后续会有多个帐号的sshkey切换，因此在.ssh目录创建config文件，输入：<blockquote>
 <p>#github<br>Host github<br>  HostName github.com<br>  User git<br>  IdentityFile ~/.ssh/id_rsa  </p>
@@ -388,7 +388,7 @@
 </ul>
 <p>如果无错误发生，则本机可免密提交代码到github上。为方便提交代码，完善git信息</p>
 <blockquote>
-<p>git config –global user.name “aierui”//用户名<br>git config –global user.email  “imland@outlook.com”//填写自己的邮箱    </p>
+<p>git config –global user.name “xxx”//用户名<br>git config –global user.email  “xxx@163.com”//填写自己的邮箱    </p>
 </blockquote>
 <ul>
 <li>检出仓库到本地<blockquote>
@@ -412,17 +412,16 @@
 </ul>
 <p>安装完成后，执行hexo clean;hexo -g;hexo －s可以在localhost:4000查看hexo的默认页面。</p>
 <ul>
-<li><p>安装next主题</p>
-<blockquote>
+<li>安装next主题<blockquote>
 <p>git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a> themes/next<br>cd themes/next<br>git pull   </p>
 </blockquote>
-<p>  配置xx.github.io.git目录下的_config.yml</p>
-<blockquote>
-<p> language: zh-Hans #网站语言<br> timezone: Asia/Shanghai #时区<br> theme: next<br> deploy:<br> type: git<br> repository: <a href="https://github.com/xx/xx.github.io.git" target="_blank" rel="external">https://github.com/xx/xx.github.io.git</a><br> branch: master    </p>
-</blockquote>
-<p>配置上面的地址后，每次执行hexo -g;hexo -d会将生成的静态页面推送到github上的xx.github.io.git仓库。</p>
 </li>
 </ul>
+<p>配置xx.github.io.git目录下的_config.yml</p>
+<blockquote>
+<p> language: zh-Hans #网站语言<br>   timezone: Asia/Shanghai #时区<br>   theme: next<br>   deploy:<br>   type: git<br>   repository: <a href="https://github.com/xx/xx.github.io.git" target="_blank" rel="external">https://github.com/xx/xx.github.io.git</a><br>   branch: master    </p>
+</blockquote>
+<p> 配置上面的地址后，每次执行hexo -g;hexo -d会将生成的静态页面推送到github上的xx.github.io.git仓库。</p>
 <h3 id="安装及配置oschina"><a href="#安装及配置oschina" class="headerlink" title="安装及配置oschina"></a>安装及配置oschina</h3><ul>
 <li>设置oschina<br>在oschina上创建仓库hexo，并为oschina添加sshkey<blockquote>
 <p>ssh-keygen -t rsa -C “xx@163.com” -f oschina</p>
@@ -460,7 +459,7 @@
 </ul>
 <h3 id="恢复资料"><a href="#恢复资料" class="headerlink" title="恢复资料"></a>恢复资料</h3><p>如果想在一个新环境使用博客，按照以下流程处理：</p>
 <ul>
-<li>使用git clone <a href="https://git.oschina.net/wayd2001/hexo.git" target="_blank" rel="external">https://git.oschina.net/wayd2001/hexo.git</a> 拷贝仓库</li>
+<li>使用git clone <a href="https://git.oschina.net/xxx/hexo.git" target="_blank" rel="external">https://git.oschina.net/xxx/hexo.git</a> 拷贝仓库</li>
 <li>在hexo.git目录执行npm install -g hexo-cli、npm install、npm install hexo-deployer-git<br><strong>注意</strong>一定不要执行hexo init。</li>
 </ul>
 <h3 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h3><ul>
@@ -468,23 +467,30 @@
 <p>npm install hexo-deployer-git –save</p>
 </blockquote>
 </li>
-<li>执行ssh -T git@git.oschina.net提示Permission denied (publickey)，是因为产生的sshkey未添加到系统生效，执行如下命令:<blockquote>
+<li>执行ssh -T git@git.oschina.net提示Permission denied (publickey)，是因为产生的sshkey未添加到系统生效，每次开机后执行如下命令:<blockquote>
 <p>ssh-add ~/.ssh/私钥名  </p>
 </blockquote>
 </li>
 <li>如果不介意博客源文件也放在github上的话，可以先把xx.github.io.git库下到本地，然后在本地建立一个hexo分支，然后把本地的hexo分支推送到github，同时github设置hexo为默认分支。源文件推送到hexo分支，在执行hexo -d时，生成的静态文件会推送到master分支。这样就不需要oschina私有库。使用github一个库，两个分支一样达到目的。</li>
-<li><p>hexo在本地测试运行重启后页面一直空白，或者参照”恢复资料”一节部署后提示如下：</p>
-<blockquote>
+<li>hexo在本地测试运行重启后页面一直空白，或者参照”恢复资料”一节部署后提示如下：<blockquote>
 <p>WARN  No layout: 2017/05/13/hello-world/index.html<br>WARN  No layout: archives/index.html<br>WARN  No layout: archives/2017/index.html<br>WARN  No layout: archives/2017/05/index.html<br>WARN  No layout: index.html    </p>
 </blockquote>
-<p>这个原因是从oschina下载的themes目录下的next主题目录为空，因为next也是一个版本库，目录下包含.git目录，当向oschina进行push时，未push上去。目前的解决方案时将next目录下的.git改名为next_git，在此push发现还是没有提交上去。然后将next目录拷贝到库之外的目录，执行push在服务端先删除next，然后再把next拷贝回来，再次push。</p>
 </li>
+</ul>
+<p>这个原因是从oschina下载的themes目录下的next主题目录为空，因为next也是一个版本库，目录下包含.git目录，当向oschina进行push时，未push上去。目前的解决方案时将next目录下的.git改名为next_git，在此push发现还是没有提交上去。然后将next目录拷贝到库之外的目录，执行push在服务端先删除next，然后再把next拷贝回来，再次push。</p>
+<ul>
 <li><p>fatal: The current branch master has no upstream branch.</p>
 <blockquote>
 <p>git push -u origin master(不要-u也可以)<br>或者<br>git add -A<br>git commit<br>git push origin master    </p>
 </blockquote>
 </li>
+<li><p>执行<code>hexo cl;hexo g -d</code>提示下面错误:</p>
+<blockquote>
+<p>FATAL Permission denied (publickey).<br>fatal: Could not read from remote repository.<br>Please make sure you have the correct access rights<br>and the repository exists.</p>
+</blockquote>
+</li>
 </ul>
+<p>这个原因是对应的git用户的key未加入到系统中，参见前面<code>ssh-add</code>的Q&amp;A.</p>
 <h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><blockquote>
 <p>hexo help #查看帮助<br>hexo init #初始化一个目录<br>hexo new “postName” #新建文章<br>hexo new page “pageName” #新建页面<br>hexo generate #生成网页，可以在 public 目录查看整个网站的文件<br>hexo server #本地预览，’Ctrl+C’关闭<br>hexo deploy #部署.deploy目录<br>hexo clean #清除缓存，<strong>强烈建议每次执行命令前先清理缓存，每次部署前先删除 .deploy 文件夹</strong><br>npm install hexo -g #安装<br>npm update hexo -g #升级<br>hexo generate –deploy<br>hexo deploy –generate<br>hexo deploy -g<br>hexo server -g<br>hexo new draft <title>  新建草稿<br>hexo publish draft <title> 发布草稿为post</title></title></p>
 </blockquote>
@@ -638,7 +644,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
