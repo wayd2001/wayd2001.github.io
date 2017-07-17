@@ -1,0 +1,1001 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="java,float,double," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/uploads/images/logo/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="背景在java中float赋值给double，会产生精度问题。1234float a = 2.1f;double b = 3.3;b = a;System.out.println(b); 输出为2.0999999046325684。">
+<meta name="keywords" content="java,float,double">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java中float和double精度问题">
+<meta property="og:url" content="http://xiaoxiaoqiang.win/2017/07/18/java/java中float和double精度问题/index.html">
+<meta property="og:site_name" content="小小强的部落">
+<meta property="og:description" content="背景在java中float赋值给double，会产生精度问题。1234float a = 2.1f;double b = 3.3;b = a;System.out.println(b); 输出为2.0999999046325684。">
+<meta property="og:image" content="http://ossysbflp.bkt.clouddn.com/1.gif">
+<meta property="og:image" content="http://ossysbflp.bkt.clouddn.com/2.gif">
+<meta property="og:image" content="http://ossysbflp.bkt.clouddn.com/3.gif">
+<meta property="og:image" content="http://ossysbflp.bkt.clouddn.com/4.gif">
+<meta property="og:image" content="http://ossysbflp.bkt.clouddn.com/5.gif">
+<meta property="og:image" content="http://ossysbflp.bkt.clouddn.com/6.gif">
+<meta property="og:image" content="http://ossysbflp.bkt.clouddn.com/7.gif">
+<meta property="og:updated_time" content="2017-07-17T16:11:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java中float和double精度问题">
+<meta name="twitter:description" content="背景在java中float赋值给double，会产生精度问题。1234float a = 2.1f;double b = 3.3;b = a;System.out.println(b); 输出为2.0999999046325684。">
+<meta name="twitter:image" content="http://ossysbflp.bkt.clouddn.com/1.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xiaoxiaoqiang.win/2017/07/18/java/java中float和double精度问题/"/>
+
+
+
+
+
+  <title>java中float和double精度问题 | 小小强的部落</title>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小小强的部落</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">我思故我在</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://xiaoxiaoqiang.win/2017/07/18/java/java中float和double精度问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小小强">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/logo/icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小小强的部落">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">java中float和double精度问题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-18T00:09:34+08:00">
+                2017-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在java中float赋值给double，会产生精度问题。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">float a = 2.1f;</div><div class="line">double b = 3.3;</div><div class="line">b = a;</div><div class="line">System.out.println(b);</div></pre></td></tr></table></figure></p>
+<p>输出为<code>2.0999999046325684</code>。</p>
+<a id="more"></a>
+<h2 id="小数的二进制表示问题"><a href="#小数的二进制表示问题" class="headerlink" title="小数的二进制表示问题"></a>小数的二进制表示问题</h2><p>首先我们要搞清楚下面两个问题：  </p>
+<h3 id="十进制整数如何转化为二进制数"><a href="#十进制整数如何转化为二进制数" class="headerlink" title="十进制整数如何转化为二进制数"></a>十进制整数如何转化为二进制数</h3><p>算法很简单。举个例子，11表示成二进制数：  </p>
+<blockquote>
+<p>11/2=5 余   1<br>5/2=2   余   1<br>2/2=1   余   0<br>1/2=0   余   1<br>0结束<br>11二进制表示为(从下往上):1011</p>
+</blockquote>
+<p>这里提一点：只要遇到除以后的结果为0了就结束了，大家想一想，所有的整数除以2是不是一定能够最终得到0。换句话说，所有的整数转变为二进制数的算法会不会无限循环下去呢？绝对不会，整数永远可以用二进制精确表示 ，但小数就不一定了。</p>
+<h3 id="十进制小数如何转化为二进制数"><a href="#十进制小数如何转化为二进制数" class="headerlink" title="十进制小数如何转化为二进制数"></a>十进制小数如何转化为二进制数</h3><p>算法是乘以2直到没有了小数为止。举个例子，0.9表示成二进制数</p>
+<blockquote>
+<p>0.9<em>2=1.8   取整数部分 1<br>0.8(1.8的小数部分)</em>2=1.6    取整数部分 1<br>0.6<em>2=1.2   取整数部分 1<br>0.2</em>2=0.4   取整数部分 0<br>0.4<em>2=0.8   取整数部分 0<br>0.8</em>2=1.6 取整数部分 1<br>0.6*2=1.2   取整数部分 0<br>………<br>0.9二进制表示为(从上往下): 1100100100100……</p>
+</blockquote>
+<p>注意：上面的计算过程循环了，也就是说*2永远不可能消灭小数部分，这样算法将无限下去。很显然，小数的二进制表示有时是不可能精确的 。其实道理很简单，十进制系统中能不能准确表示出1/3呢？同样二进制系统也无法准确表示1/10。这也就解释了为什么浮点型减法出现了”减不尽”的精度丢失问题。</p>
+<h2 id="float型在内存中的存储"><a href="#float型在内存中的存储" class="headerlink" title="float型在内存中的存储"></a>float型在内存中的存储</h2><p>众所周知、 Java 的float型在内存中占4个字节。float的32个二进制位结构如下<br>float内存存储结构  </p>
+<table>
+<thead>
+<tr>
+<th>4bytes</th>
+<th style="text-align:center">31</th>
+<th style="text-align:right">30</th>
+<th style="text-align:right">29—-23</th>
+<th style="text-align:right">22—-0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>表示</td>
+<td style="text-align:center">实数符号位</td>
+<td style="text-align:right">指数符号位</td>
+<td style="text-align:right">指数位</td>
+<td style="text-align:right">有效数位</td>
+</tr>
+</tbody>
+</table>
+<p>其中符号位1表示正，0表示负。有效位数位24位，其中一位是实数符号位。<br>将一个float型转化为内存存储格式的步骤为：  </p>
+<ul>
+<li>先将这个实数的绝对值化为二进制格式，注意实数的整数部分和小数部分的二进制方法在上面已经探讨过了。   </li>
+<li>将这个二进制格式实数的小数点左移或右移n位，直到小数点移动到第一个有效数字的右边。   </li>
+<li>从小数点右边第一位开始数出二十三位数字放入第22到第0位。   </li>
+<li>如果实数是正的，则在第31位放入“0”，否则放入“1”。   </li>
+<li>如果n 是左移得到的，说明指数是正的，第30位放入“1”。如果n是右移得到的或n=0，则第30位放入“0”。   </li>
+<li>如果n是左移得到的，则将n减去1后化为二进制，并在左边加“0”补足七位，放入第29到第23位。如果n是右移得到的或n=0，则将n化为二进制后在左边加“0”补足七位，再各位求反，再放入第29到第23位。    </li>
+</ul>
+<p>举例说明： 11.9的内存存储格式</p>
+<ul>
+<li>将11.9化为二进制后大约是” 1011. 1110011001100110011001100…”。</li>
+<li>将小数点左移三位到第一个有效位右侧： “1. 011 11100110011001100110 “。 保证有效位数24位，右侧多余的截取（误差在这里产生了 ）。</li>
+<li>这已经有了二十四位有效数字，将最左边一位“1”去掉，得到“ 011 11100110011001100110 ”共23bit。将它放入float存储结构的第22到第0位。</li>
+<li>因为11.9是正数，因此在第31位实数符号位放入“0”。</li>
+<li>由于我们把小数点左移，因此在第30位指数符号位放入“1”。</li>
+<li>因为我们是把小数点左移3位，因此将3减去1得2，化为二进制，并补足7位得到0000010，放入第29到第23位。</li>
+<li>最后表示11.9为： 0 1 0000010 011 11100110011001100110</li>
+</ul>
+<p>再举一个例子：0.2356的内存存储格式</p>
+<ul>
+<li>将0.2356化为二进制后大约是0.00111100010100000100100000。 </li>
+<li>将小数点右移三位得到1.11100010100000100100000。 </li>
+<li>从小数点右边数出二十三位有效数字，即11100010100000100100000放<br>入第22到第0位。 </li>
+<li>由于0.2356是正的，所以在第31位放入“0”。 </li>
+<li>由于我们把小数点右移了，所以在第30位放入“0”。 </li>
+<li>因为小数点被右移了3位，所以将3化为二进制，在左边补“0”补足七<br>位，得到0000011，各位取反，得到1111100，放入第29到第23位。 </li>
+<li>最后表示0.2356为：0 0 1111100 11100010100000100100000</li>
+</ul>
+<p>将一个内存存储的float二进制格式转化为十进制的步骤： </p>
+<ul>
+<li>将第22位到第0位的二进制数写出来，在最左边补一位“1”，得到二十四位有效数字。将小数点点在最左边那个“1”的右边。 </li>
+<li>取出第29到第23位所表示的值n。当30位是“0”时将n各位求反。当30位是“1”时将n增1。 </li>
+<li>将小数点左移n位（当30位是“0”时）或右移n位（当30位是“1”时），得到一个二进制表示的实数。 </li>
+<li>将这个二进制实数化为十进制，并根据第31位是“0”还是“1”加上正号或负号即可。  </li>
+</ul>
+<h3 id="浮点型的减法运算"><a href="#浮点型的减法运算" class="headerlink" title="浮点型的减法运算"></a>浮点型的减法运算</h3><ul>
+<li><p>0操作数的检查；<br>如果判断两个需要加减的浮点数有一个为0，即可得知运算结果而没有必要再进行有序的一些列操作。 </p>
+</li>
+<li><p>比较阶码（指数位）大小并完成对阶；<br>两浮点数进行加减，首先要看两数的指数位是否相同，即小数点位置是否对齐。若两数 指数位 相同，表示小数点是对齐的，就可以进行尾数的加减运算。反之，若两数阶码不同，表示小数点位置没有对齐，此时必须使两数的阶码相同，这个过程叫做对阶 。<br>如何对 阶(假设两浮点数的指数位为 Ex 和 Ey )：通过尾数的移位以改变 Ex 或 Ey ，使之相等。 由 于浮点表示的数多是规格化的，尾数左移会引起最高有位的丢失，造成很大误差；而尾数右移虽引起最低有效位的丢失，但造成的误差较小，因此，对阶操作规定使尾数右移，尾数右移后使阶码作相应增加，其数值保持不变。很显然，一个增加后的阶码与另一个相等，所增加的阶码一定是小阶。因此在对阶时，总是使小阶向大阶看齐 ，即小阶的尾数向右移位 ( 相当于小数点左移 ) ，每右移一位，其阶码加 1 ，直到两数的阶码相等为止，右移的位数等于阶差 △ E 。 </p>
+</li>
+<li><p>尾数（有效数位）进行加或减运算；</p>
+</li>
+<li><p>结果规格化并进行舍入处理。</p>
+</li>
+</ul>
+<h2 id="参考文章一"><a href="#参考文章一" class="headerlink" title="参考文章一"></a>参考文章一</h2><p>C语言和C#语言中，对于浮点类型的数据采用单精度类型（float）和双精度类型(double)来存储，float数据占用32bit,double数据占用64bit,我们在声明一个变量float f= 2.25f的时候，是如何分配内存的呢？如果胡乱分配，那世界岂不是乱套了么，其实不论是float还是double在存储方式上都是遵从IEEE的规范 的，float遵从的是IEEE R32.24 ,而double 遵从的是R64.53。</p>
+<p>无论是单精度还是双精度在存储中都分为三个部分：</p>
+<ul>
+<li>符号位(Sign) : 0代表正，1代表为负</li>
+<li>指数位（Exponent）:用于存储科学计数法中的指数数据，并且采用移位存储</li>
+<li>尾数部分（Mantissa）：尾数部分  </li>
+</ul>
+<p>其中float的存储方式如下图所示：<br><img src="http://ossysbflp.bkt.clouddn.com/1.gif" alt=""><br>而双精度的存储方式为:<br><img src="http://ossysbflp.bkt.clouddn.com/2.gif" alt=""> </p>
+<p>R32.24和R64.53的存储方式都是用科学计数法来存储数据的，比如8.25用十进制的科学计数法表示就为:8.25x10的0次方,而120.5可以表示为:1.205x10的二次方, 这些小学的知识就不用多说了吧。而我们傻蛋计算机根本不认识十进制的数据，他只认识0，1，所以在计算机存储中，首先要将上面的数更改为二进制的科学计数 法表示，8.25用二进制表示可表示为1000.01,我靠，不会连这都不会转换吧?那我估计要没辙了。120.5用二进制表示为：1110110.1用二进制的科学计数法表示1000.01可以表示为1.0001x2的三次方,1110110.1可以表示为1.1101101x2的六次方,任何一个数都的科学计数法表示都为1.xxx乘以2的n次方,尾数部分就可以表示为xxxx,第一位都是1嘛，干嘛还要表示呀？可以将小数点前面的1省略，所以23bit的尾数部分，可以表示的精度却变成了24bit，道理就是在这里，那24bit能精确到小数点后几位呢，我们知道9的二进制表示为1001，所以4bit能精确十进制中的1位小数点， 24bit就能使float能精确到小数点后6位，而对于指数部分，因为指数可正可负，8位的指数位能表示的指数范围就应该为:-127-128了，所以 指数部分的存储采用移位存储，存储的数据为元数据+127，下面就看看8.25和120.5在内存中真正的存储方式。</p>
+<p>首先看下8.25，用二进制的科学计数法表示为:1.0001x2的三次方。按照上面的存储方式，符号位为:0，表示为正，指数位为:3+127=130,位数部分为,故8.25的存储方式如下图所示:<br><img src="http://ossysbflp.bkt.clouddn.com/3.gif" alt=""> </p>
+<p>而单精度浮点数120.5的存储方式如下图所示:<br><img src="http://ossysbflp.bkt.clouddn.com/4.gif" alt=""> </p>
+<p>那么如果给出内存中一段数据，并且告诉你是单精度存储的话，你如何知道该数据的十进制数值呢？其实就是对上面的反推过程，比如给出如下内存 数据：0100001011101101000000000000，首先我们现将该数据分段，0 10000 0101 110 1101 0000 0000 0000 0000，在内存中的存储就为下图所示：<br><img src="http://ossysbflp.bkt.clouddn.com/5.gif" alt=""> </p>
+<p>根据我们的计算方式，可以计算出，这样一组数据表示为:1.1101101x2的六次方=120.5</p>
+<p>而双精度浮点数的存储和单精度的存储大同小异，不同的是指数部分和尾数部分的位数。所以这里不再详细的介绍双精度的存储方式了，只将120.5的最后存储方式图给出，大家可以仔细想想为何是这样子的<br><img src="http://ossysbflp.bkt.clouddn.com/6.gif" alt=""> </p>
+<p>下面我就这个基础知识点来解决一个我们的一个疑惑，请看下面一段程序，注意观察输出结果</p>
+<blockquote>
+<p>float f = 2.2f;<br>double d = (double)f;<br>Console.WriteLine(d.ToString(“0.0000000000000”));<br>f = 2.25f;<br>d = (double)f;<br>Console.WriteLine(d.ToString(“0.0000000000000”));  </p>
+</blockquote>
+<p>可能输出的结果让大家疑惑不解，单精度的2.2转换为双精度后，精确到小数点后13位后变为了2.2000000476837，而单精度的2.25转换为双精度后，变为了2.2500000000000，为何2.2在转换后的数值更改了而2.25却没有更改呢？很奇怪吧？其实通过上面关于两 种存储结果的介绍，我们已经大概能找到答案。首先我们看看2.25的单精度存储方式，很简单 0 1000 0001 001 0000 0000 0000 0000 0000,而2.25的双精度表示为:0 100 0000 0001 0010 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000,这样2.25在进行强制转换的时候，数值是不会变的，而我们再看看2.2呢，2.2用科学计数法表示应该为：将十进制的小数转换为二进制的小数 的方法为将小数<em>2，取整数部分，所以0.282=0.4，所以二进制小数第一位为0.4的整数部分0，0.4×2=0.8，第二位为0,0.8</em>2= 1.6,第三位为1，0.6×2 = 1.2，第四位为1，0.2*2=0.4，第五位为0，这样永远也不可能乘到=1.0，得到的二进制是一个无限循环的排列 00110011001100110011… ,对于单精度数据来说，尾数只能表示24bit的精度，所以2.2的float存储为:</p>
+<p><img src="http://ossysbflp.bkt.clouddn.com/7.gif" alt=""> </p>
+<p>但是这样存储方式，换算成十进制的值，却不会是2.2的，应为十进制在转换为二进制的时候可能会不准确，如2.2，而double类型的数 据也存在同样的问题，所以在浮点数表示中会产生些许的误差，在单精度转换为双精度的时候，也会存在误差的问题，对于能够用二进制表示的十进制数据，如 2.25，这个误差就会不存在，所以会出现上面比较奇怪的输出结果。</p>
+<p>本文属作者原创，只发布在博客园，希望大家在转载的时候，注明出处和作者，谢谢。</p>
+<p>注：本文在写作过程中，参照了如下资料：</p>
+<p><a href="http://www.msdn.net/library/chs/default.asp?url=/library/CHS/vccore/html/_core_why_floating_point_numbers_may_lose_precision.asp" target="_blank" rel="external">http://www.msdn.net/library/chs/default.asp?url=/library/CHS/vccore/html/_core_why_floating_point_numbers_may_lose_precision.asp</a></p>
+<p><a href="http://blog.csdn.net/ganxingming/archive/2006/12/19/1449526.asp" target="_blank" rel="external">http://blog.csdn.net/ganxingming/archive/2006/12/19/1449526.asp</a></p>
+<h2 id="参考资料二"><a href="#参考资料二" class="headerlink" title="参考资料二"></a>参考资料二</h2><ol>
+<li>float整数计算误差</li>
+</ol>
+<p>案例：会员积分字段采用float类型，导致计算会员积分时，7位整数的数据计算结果出现误差。<br>原因：超出float精度范围，无法精确计算。<br>float和double的精度是由尾数的位数来决定的。浮点数在内存中是按科学计数法来存储的，其整数部分始终是一个隐含着的“1”，由于它是不变的，故不能对精度造成影响。<br>float：2^23 = 8388608，一共七位，这意味着最多能有7位有效数字，但绝对能保证的为6位，也即float的精度为6~7位有效数字；<br>double：2^52 = 4503599627370496，一共16位，同理，double的精度为15~16位。<br>难道只是位数多大的问题，字段类型换成double就可以解决吗？对于本案例是这样，因为都是整数计算，但如果有小数位，就不一定了，见下面案例。</p>
+<ol>
+<li>double小数转bigdecimal后四舍五入计算有误差</li>
+</ol>
+<p>案例：<br>double g= 12.35;<br>BigDecimal bigG=new BigDecimal(g).setScale(1,   BigDecimal.ROUND_HALF_UP); //期望得到12.4<br>System.out.println(“test G:”+bigG.doubleValue());<br>test G:12.3<br>原因：<br>定义double g= 12.35;    而在计算机中二进制表示可能这是样：定义了一个g=12.34444444444444449，<br>new BigDecimal(g)   g还是12.34444444444444449<br>new BigDecimal(g).setScale(1, BigDecimal.ROUND_HALF_UP); 得到12.3<br>正确的定义方式是使用字符串构造函数：<br>new BigDecimal(“12.35”).setScale(1, BigDecimal.ROUND_HALF_UP)  </p>
+<ol>
+<li>float和double做四则运算误差<br>案例：  <blockquote>
+<p>public class Test{<br> public static void main(String args[]){  </p>
+<pre><code>System.out.println(0.05+0.01);  
+System.out.println(1.0-0.42);  
+System.out.println(4.015*100);  
+System.out.println(123.3/100);  
+</code></pre><p> }<br>}  </p>
+</blockquote>
+</li>
+</ol>
+<p>结果：<br>0.060000000000000005<br>0.5800000000000001<br>401.49999999999994<br>1.2329999999999999<br>原因：<br>那么为什么会出现精度丢失呢？在查阅了一些资料以后，我稍微有了一些头绪，下面是本人的愚见，仅供参考。<br>首先得从计算机本身去讨论这个问题。我们知道，计算机并不能识别除了二进制数据以外的任何数据。无论我们使用何种编程语言，在何种编译环境下工作，都要先 把源程序翻译成二进制的机器码后才能被计算机识别。以上面提到的情况为例，我们源程序里的2.4是十进制的，计算机不能直接识别，要先编译成二进制。但问 题来了，2.4的二进制表示并非是精确的2.4，反而最为接近的二进制表示是2.3999999999999999。原因在于浮点数由两部分组成：指数和尾数，这点如果知道怎样进行浮点数的二进制与十进制转换，应该是不难理解的。如果在这个转换的过程中，浮点数参与了计算，那么转换的过程就会变得不可预 知，并且变得不可逆。我们有理由相信，就是在这个过程中，发生了精度的丢失。而至于为什么有些浮点计算会得到准确的结果，应该也是碰巧那个计算的二进制与 十进制之间能够准确转换。而当输出单个浮点型数据的时候，可以正确输出，如</p>
+<blockquote>
+<p>double d = 2.4;<br>System.out.println(d);</p>
+</blockquote>
+<p>输出的是2.4，而不是2.3999999999999999。也就是说，不进行浮点计算的时候，在十进制里浮点数能正确显示。这更印证了我以上的想法，即如果浮点数参与了计算，那么浮点数二进制与十进制间的转换过程就会变得不可预知，并且变得不可逆。</p>
+<p>事实上，浮点数并不适合用于精确计算，而适合进行科学计算。这里有一个小知识：既然float和double型用来表示带有小数点的数，那为什么我们不称 它们为“小数”或者“实数”，要叫浮点数呢？因为这些数都以科学计数法的形式存储。当一个数如50.534，转换成科学计数法的形式为5.053e1，它 的小数点移动到了一个新的位置（即浮动了）。可见，浮点数本来就是用于科学计算的，用来进行精确计算实在太不合适了。</p>
+<ol>
+<li>bigdecimal构造函数使用不当带来异常  </li>
+</ol>
+<p>案例：<br>BigDecimal其中一个构造函数以双精度浮点数作为输入，另一个以整数和换算因子作为输入，还有一个以小数的 String 表示作为输入。要小心使用   BigDecimal(double) 构造函数，因为如果不了解它，会在计算过程中产生舍入误差。请使用基于整数或 String 的构造函数。<br>如果使用 BigDecimal(double) 构造函数不恰当，在传递给 JDBC   setBigDecimal() 方法时，会造成似乎很奇怪的 JDBC   驱动程序中的异常。例如，考虑以下 JDBC 代码，该代码希望将数字 0.01   存储到小数字段：  </p>
+<blockquote>
+<p>PreparedStatement ps =<br>connection.prepareStatement(“INSERT INTO Foo SET name=?, value=?”);<br>  ps.setString(1, “penny”);<br>  ps.setBigDecimal(2, new BigDecimal(0.01));<br>  ps.executeUpdate();  </p>
+</blockquote>
+<p>在执行这段似乎无害的代码时会抛出一些令人迷惑不解的异常（这取决于具体的 JDBC 驱动程序），因为 0.01 的双精度近似值会导致大的换算值，这可能会使 JDBC 驱动程序或数据库感到迷惑。JDBC 驱动程序会产生异常，但可能不会说明代码实际上错在哪里，除非意识到二进制浮点数的局限性。相反，使用 BigDecimal(“0.01”) 或 BigDecimal(1,2) 构造 BigDecimal 来避免这类问题，因为这两种方法都可以精确地表示小数。</p>
+<ol>
+<li>解决浮点数精确计算有误差的方法 </li>
+</ol>
+<p>在《Effective   Java》这本书中也提到这个原则，float和double只能用来做科学计算或者是工程计算，在商业计算中我们要用java.math.BigDecimal。使用BigDecimal并且一定要用String来够造。</p>
+<p>BigDecimal用哪个构造函数？<br>BigDecimal(double val)<br>BigDecimal(String val)<br>上面的API简要描述相当的明确，而且通常情况下，上面的那一个使用起来要方便一些。我们可能想都不想就用上了，会有什么问题呢？等到出了问题的时候，才发现参数是double的构造方法的详细说明中有这么一段：  </p>
+<blockquote>
+<p>Note: the results of this constructor can be somewhat unpredictable. One might assume that new BigDecimal(.1) is exactly equal to .1, but it is actually equal to .1000000000000000055511151231257827021181583404541015625. This is so because .1 cannot be represented exactly as a double (or, for that matter, as a binary fraction of any finite length). Thus, the long value that is being passed in to the constructor is not exactly equal to .1, appearances nonwithstanding.<br>The (String) constructor, on the other hand, is perfectly predictable: new BigDecimal(“.1”) is exactly equal to .1, as one would expect. Therefore, it is generally recommended that the (String) constructor be used in preference to this one.    </p>
+</blockquote>
+<p>原来我们如果需要精确计算，非要用String来够造BigDecimal不可！</p>
+<ol>
+<li>定点数和浮点数的区别  </li>
+</ol>
+<p>在计算机系统的发展过程中，曾经提出过多种方法表达实数。典型的比如相对于浮点数的定点数（Fixed Point Number）。在这种表达方式中，小数点固定的位于实数所有数字中间的某个位置。货币的表达就可以使用这种方式，比如 99.00 或者 00.99 可以用于表达具有四位精度（Precision），小数点后有两位的货币值。由于小数点位置固定，所以可以直接用四位数值来表达相应的数值。SQL 中的 NUMBER 数据类型就是利用定点数来定义的。还有一种提议的表达方式为有理数表达方式，即用两个整数的比值来表达实数。</p>
+<p>定点数表达法的缺点在于其形式过于僵硬，固定的小数点位置决定了固定位数的整数部分和小数部分，不利于同时表达特别大的数或者特别小的数。最终，绝大多数现代的计算机系统采纳了所谓的浮点数表达方式。这种表达方式利用科学计数法来表达实数，即用一个尾数（Mantissa ），一个基数（Base），一个指数（Exponent）以及一个表示正负的符号来表达实数。比如 123.45 用十进制科学计数法可以表达为 1.2345 × 102 ，其中 1.2345 为尾数，10 为基数，2 为指数。浮点数利用指数达到了浮动小数点的效果，从而可以灵活地表达更大范围的实数。</p>
+<p>在MySQL中使用浮点数类型和定点数类型来表示小数。浮点数类型包括单精度浮点数（FLOAT型）和双精度浮点数（DOUBLE型）。定点数类型就是DECIMAL型。mysql的浮点数类型和定点数类型如下表所示：<br>| 类型名称        | 字节数  | 负数的取值范围  | 非负数的取值范围 |<br>| ————-   |:————-:| —–:| —–:|<br>| FLOAT           | 4 | -3.402823466E+38～-1.175494351E-38|0和1.175494351E-38～3.402823466E+38｜<br>| DOUBLE          | 8      |   -1.7976931348623157E+308～-2.2250738585072014E-308 |0和2.2250738585072014E-308～1.7976931348623157E+308｜<br>| DECIMAL(M,D)或DEC(M,D) | M+2  |    同DOUBLE型 |同DOUBLE型｜</p>
+<p>从上表中可以看出，DECIMAL型的取值范围与DOUBLE相同。但是，DECIMAL的有效取值范围由M和D决定，而且DECIMAL型的字节数是M+2，也就是说，定点数的存储空间是根据其精度决定的。</p>
+<ol>
+<li>bigdecimal比等方法</li>
+</ol>
+<p>如浮点类型一样， BigDecimal 也有一些令人奇怪的行为。尤其在使用 equals() 方法来检测数值之间是否相等时要小心。 equals() 方法认为，两个表示同一个数但换算值不同（例如， 100.00 和 100.000 ）的 BigDecimal 值是不相等的。然而， compareTo() 方法会认为这两个数是相等的，所以在从数值上比较两个 BigDecimal 值时，应该使用 compareTo() 而不是 equals() 。<br>另外还有一些情形，任意精度的小数运算仍不能表示精确结果。例如， 1 除以 9 会产生无限循环的小数 .111111… 。出于这个原因，在进行除法运算时， BigDecimal 可以让您显式地控制舍入。 movePointLeft() 方法支持 10 的幂次方的精确除法。<br>与零比较：  </p>
+<blockquote>
+<p>int r=big_decimal.compareTo(BigDecimal.Zero); //和0，Zero比较<br>if(r==0) //等于<br>if(r==1) //大于<br>if(r==-1) //小于  </p>
+</blockquote>
+<ol>
+<li>简化bigdecimal计算的小工具类</li>
+</ol>
+<p>如果我们要做一个加法运算，需要先将两个浮点数转为String，然后够造成BigDecimal，在其中一个上调用add方法，传入另一个作为参数，然后把运算的结果（BigDecimal）再转换为浮点数。你能够忍受这么烦琐的过程吗？网上提供的工具类Arith来简化操作。它提供以下静态方法，包括加减乘除和四舍五入：   </p>
+<p>public   static   double   add(double   v1,double   v2)<br>public   static   double   sub(double   v1,double   v2)<br>public   static   double   mul(double   v1,double   v2)<br>public   static   double   div(double   v1,double   v2)<br>public   static   double   div(double   v1,double   v2,int   scale)<br>public   static   double   round(double   v,int   scale)  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div></pre></td><td class="code"><pre><div class="line">import java.math.BigDecimal;    </div><div class="line">  </div><div class="line">/**  </div><div class="line"> * 进行BigDecimal对象的加减乘除，四舍五入等运算的工具类  </div><div class="line"> * @author ameyume  </div><div class="line"> *  </div><div class="line"> */  </div><div class="line">public class Arith &#123;    </div><div class="line">  </div><div class="line">    /**   </div><div class="line">    * 由于Java的简单类型不能够精确的对浮点数进行运算，这个工具类提供精   </div><div class="line">    * 确的浮点数运算，包括加减乘除和四舍五入。   </div><div class="line">    */    </div><div class="line">    //默认除法运算精度    </div><div class="line">    private static final int DEF_DIV_SCALE = 10;    </div><div class="line">           </div><div class="line">    //这个类不能实例化    </div><div class="line">    private Arith()&#123;    </div><div class="line">    &#125;    </div><div class="line">  </div><div class="line">    /**   </div><div class="line">     * 提供精确的加法运算。   </div><div class="line">     * @param v1 被加数   </div><div class="line">     * @param v2 加数   </div><div class="line">     * @return 两个参数的和   </div><div class="line">     */    </div><div class="line">    public static double add(double v1,double v2)&#123;    </div><div class="line">        BigDecimal b1 = new BigDecimal(Double.toString(v1));    </div><div class="line">        BigDecimal b2 = new BigDecimal(Double.toString(v2));    </div><div class="line">        return b1.add(b2).doubleValue();    </div><div class="line">    &#125;    </div><div class="line">       </div><div class="line">    /**   </div><div class="line">     * 提供精确的减法运算。   </div><div class="line">     * @param v1 被减数   </div><div class="line">     * @param v2 减数   </div><div class="line">     * @return 两个参数的差   </div><div class="line">     */    </div><div class="line">    public static double sub(double v1,double v2)&#123;    </div><div class="line">        BigDecimal b1 = new BigDecimal(Double.toString(v1));    </div><div class="line">        BigDecimal b2 = new BigDecimal(Double.toString(v2));    </div><div class="line">        return b1.subtract(b2).doubleValue();    </div><div class="line">    &#125;    </div><div class="line">       </div><div class="line">    /**   </div><div class="line">     * 提供精确的乘法运算。   </div><div class="line">     * @param v1 被乘数   </div><div class="line">     * @param v2 乘数   </div><div class="line">     * @return 两个参数的积   </div><div class="line">     */    </div><div class="line">    public static double mul(double v1,double v2)&#123;    </div><div class="line">        BigDecimal b1 = new BigDecimal(Double.toString(v1));    </div><div class="line">        BigDecimal b2 = new BigDecimal(Double.toString(v2));    </div><div class="line">        return b1.multiply(b2).doubleValue();    </div><div class="line">    &#125;    </div><div class="line">  </div><div class="line">    /**   </div><div class="line">     * 提供（相对）精确的除法运算，当发生除不尽的情况时，精确到   </div><div class="line">     * 小数点以后10位，以后的数字四舍五入。   </div><div class="line">     * @param v1 被除数   </div><div class="line">     * @param v2 除数   </div><div class="line">     * @return 两个参数的商   </div><div class="line">     */    </div><div class="line">    public static double div(double v1,double v2)&#123;    </div><div class="line">        return div(v1,v2,DEF_DIV_SCALE);    </div><div class="line">    &#125;    </div><div class="line">  </div><div class="line">    /**   </div><div class="line">     * 提供（相对）精确的除法运算。当发生除不尽的情况时，由scale参数指   </div><div class="line">     * 定精度，以后的数字四舍五入。   </div><div class="line">     * @param v1 被除数   </div><div class="line">     * @param v2 除数   </div><div class="line">     * @param scale 表示表示需要精确到小数点以后几位。   </div><div class="line">     * @return 两个参数的商   </div><div class="line">     */    </div><div class="line">    public static double div(double v1,double v2,int scale)&#123;    </div><div class="line">        if(scale&lt;0)&#123;    </div><div class="line">            throw new IllegalArgumentException(    </div><div class="line">                &quot;The scale must be a positive integer or zero&quot;);    </div><div class="line">        &#125;    </div><div class="line">        BigDecimal b1 = new BigDecimal(Double.toString(v1));    </div><div class="line">        BigDecimal b2 = new BigDecimal(Double.toString(v2));    </div><div class="line">        return b1.divide(b2,scale,BigDecimal.ROUND_HALF_UP).doubleValue();    </div><div class="line">    &#125;    </div><div class="line">  </div><div class="line">    /**   </div><div class="line">     * 提供精确的小数位四舍五入处理。   </div><div class="line">     * @param v 需要四舍五入的数字   </div><div class="line">     * @param scale 小数点后保留几位   </div><div class="line">     * @return 四舍五入后的结果   </div><div class="line">     */    </div><div class="line">    public static double round(double v,int scale)&#123;    </div><div class="line">        if(scale&lt;0)&#123;    </div><div class="line">            throw new IllegalArgumentException(    </div><div class="line">                &quot;The scale must be a positive integer or zero&quot;);    </div><div class="line">        &#125;    </div><div class="line">        BigDecimal b = new BigDecimal(Double.toString(v));    </div><div class="line">        BigDecimal one = new BigDecimal(&quot;1&quot;);    </div><div class="line">        return b.divide(one,scale,BigDecimal.ROUND_HALF_UP).doubleValue();    </div><div class="line">    &#125;    </div><div class="line">       </div><div class="line">   /**   </div><div class="line">    * 提供精确的类型转换(Float)   </div><div class="line">    * @param v 需要被转换的数字   </div><div class="line">    * @return 返回转换结果   </div><div class="line">    */    </div><div class="line">    public static float convertsToFloat(double v)&#123;    </div><div class="line">        BigDecimal b = new BigDecimal(v);    </div><div class="line">        return b.floatValue();    </div><div class="line">    &#125;    </div><div class="line">       </div><div class="line">    /**   </div><div class="line">    * 提供精确的类型转换(Int)不进行四舍五入   </div><div class="line">    * @param v 需要被转换的数字   </div><div class="line">    * @return 返回转换结果   </div><div class="line">    */    </div><div class="line">    public static int convertsToInt(double v)&#123;    </div><div class="line">        BigDecimal b = new BigDecimal(v);    </div><div class="line">        return b.intValue();    </div><div class="line">    &#125;    </div><div class="line">  </div><div class="line">    /**   </div><div class="line">    * 提供精确的类型转换(Long)   </div><div class="line">    * @param v 需要被转换的数字   </div><div class="line">    * @return 返回转换结果   </div><div class="line">    */    </div><div class="line">    public static long convertsToLong(double v)&#123;    </div><div class="line">        BigDecimal b = new BigDecimal(v);    </div><div class="line">        return b.longValue();    </div><div class="line">    &#125;    </div><div class="line">  </div><div class="line">    /**   </div><div class="line">    * 返回两个数中大的一个值   </div><div class="line">    * @param v1 需要被对比的第一个数   </div><div class="line">    * @param v2 需要被对比的第二个数   </div><div class="line">    * @return 返回两个数中大的一个值   </div><div class="line">    */    </div><div class="line">    public static double returnMax(double v1,double v2)&#123;    </div><div class="line">        BigDecimal b1 = new BigDecimal(v1);    </div><div class="line">        BigDecimal b2 = new BigDecimal(v2);    </div><div class="line">        return b1.max(b2).doubleValue();    </div><div class="line">    &#125;    </div><div class="line">  </div><div class="line">    /**   </div><div class="line">    * 返回两个数中小的一个值   </div><div class="line">    * @param v1 需要被对比的第一个数   </div><div class="line">    * @param v2 需要被对比的第二个数   </div><div class="line">    * @return 返回两个数中小的一个值   </div><div class="line">    */    </div><div class="line">    public static double returnMin(double v1,double v2)&#123;    </div><div class="line">        BigDecimal b1 = new BigDecimal(v1);    </div><div class="line">        BigDecimal b2 = new BigDecimal(v2);    </div><div class="line">        return b1.min(b2).doubleValue();    </div><div class="line">    &#125;    </div><div class="line">  </div><div class="line">    /**   </div><div class="line">    * 精确对比两个数字   </div><div class="line">    * @param v1 需要被对比的第一个数   </div><div class="line">    * @param v2 需要被对比的第二个数   </div><div class="line">    * @return 如果两个数一样则返回0，如果第一个数比第二个数大则返回1，反之返回-1   </div><div class="line">    */    </div><div class="line">        public static int compareTo(double v1,double v2)&#123;    </div><div class="line">        BigDecimal b1 = new BigDecimal(v1);    </div><div class="line">        BigDecimal b2 = new BigDecimal(v2);    </div><div class="line">        return b1.compareTo(b2);    </div><div class="line">    &#125;   </div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>参考：<br><a href="http://justjavac.iteye.com/blog/1073775" target="_blank" rel="external">http://justjavac.iteye.com/blog/1073775</a><br><a href="http://www.iteye.com/problems/51604" target="_blank" rel="external">http://www.iteye.com/problems/51604</a><br><a href="http://blog.163.com/howl_prowler/blog/static/2661971520114553211964/" target="_blank" rel="external">http://blog.163.com/howl_prowler/blog/static/2661971520114553211964/</a><br><a href="http://www.cnblogs.com/wingsless/p/3426108.html" target="_blank" rel="external">http://www.cnblogs.com/wingsless/p/3426108.html</a><br><a href="http://zhidao.baidu.com/link?url=2L4pkHgVCXlwEeDM0GRHY2gYUwR9d2JC3knqxvHwdyrrdz_LwK92gVAaIy3hhKEQYdUwNjMLe_RJO3cl8sJvbcAnFK-_rMS4Oy_viystUEe" target="_blank" rel="external">http://zhidao.baidu.com/link?url=2L4pkHgVCXlwEeDM0GRHY2gYUwR9d2JC3knqxvHwdyrrdz_LwK92gVAaIy3hhKEQYdUwNjMLe_RJO3cl8sJvbcAnFK-_rMS4Oy_viystUEe</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/images/money/wechat.JPG" alt="小小强 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/images/money/ali.JPG" alt="小小强 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java-float-double/" rel="tag"># java,float,double</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/14/hexo/将hexo博客同时托管在github，oschina和coding/" rel="next" title="将hexo博客同时托管在github，oschina和coding">
+                <i class="fa fa-chevron-left"></i> 将hexo博客同时托管在github，oschina和coding
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/images/logo/icon.jpg"
+               alt="小小强" />
+          <p class="site-author-name" itemprop="name">小小强</p>
+           
+              <p class="site-description motion-element" itemprop="description">技术之路历练</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/wayd2001" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/u/5813fda87ee0" target="_blank" title="JianShu">
+                  
+                    <i class="fa fa-fw fa-book"></i>
+                  
+                  JianShu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/u/5813fda87ee0" title="小小强简书" target="_blank">小小强简书</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小数的二进制表示问题"><span class="nav-number">2.</span> <span class="nav-text">小数的二进制表示问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#十进制整数如何转化为二进制数"><span class="nav-number">2.1.</span> <span class="nav-text">十进制整数如何转化为二进制数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#十进制小数如何转化为二进制数"><span class="nav-number">2.2.</span> <span class="nav-text">十进制小数如何转化为二进制数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#float型在内存中的存储"><span class="nav-number">3.</span> <span class="nav-text">float型在内存中的存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点型的减法运算"><span class="nav-number">3.1.</span> <span class="nav-text">浮点型的减法运算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章一"><span class="nav-number">4.</span> <span class="nav-text">参考文章一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料二"><span class="nav-number">5.</span> <span class="nav-text">参考资料二</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+
+
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小小强</span>
+</div>
+
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="#">小小强</a> 个人专属
+</div>
+
+<div class="theme-info">
+  博客 -
+  <a class="theme-link" href="#">
+   小小强
+  </a>
+</div>
+<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2138352"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+</body>
+</html>
