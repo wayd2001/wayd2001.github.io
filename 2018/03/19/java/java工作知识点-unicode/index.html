@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="unicode、utf8编码我是小小强，这是我的第14篇原创文章，阅读需要大约5分钟。    参考对于unicode,utf8知识点的介绍，可以参考以下两篇文章。    字符编码笔记：ASCII，Unicode 和 UTF-8   叫板阮一峰老师：你真的理解了 Unicode 与 UTF    个人理解 unicode只是表示了每个字符对应的编码映射（字符集），称为codepoint，至于字符究竟">
+<meta name="description" content="unicode、utf8编码我是小小强，这是我的第14篇原创文章，阅读需要大约5分钟。    参考对于unicode,utf8知识点的介绍，可以参考以下两篇文章。    字符编码笔记：ASCII，Unicode 和 UTF-8   叫板阮一峰老师：你真的理解了 Unicode 与 UTF">
 <meta name="keywords" content="unicode,java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java工作知识点-unicode">
 <meta property="og:url" content="http://xiaoxiaoqiang.win/2018/03/19/java/java工作知识点-unicode/index.html">
 <meta property="og:site_name" content="小小强的部落">
-<meta property="og:description" content="unicode、utf8编码我是小小强，这是我的第14篇原创文章，阅读需要大约5分钟。    参考对于unicode,utf8知识点的介绍，可以参考以下两篇文章。    字符编码笔记：ASCII，Unicode 和 UTF-8   叫板阮一峰老师：你真的理解了 Unicode 与 UTF    个人理解 unicode只是表示了每个字符对应的编码映射（字符集），称为codepoint，至于字符究竟">
-<meta property="og:updated_time" content="2018-03-19T14:59:31.000Z">
+<meta property="og:description" content="unicode、utf8编码我是小小强，这是我的第14篇原创文章，阅读需要大约5分钟。    参考对于unicode,utf8知识点的介绍，可以参考以下两篇文章。    字符编码笔记：ASCII，Unicode 和 UTF-8   叫板阮一峰老师：你真的理解了 Unicode 与 UTF">
+<meta property="og:updated_time" content="2018-03-19T15:09:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java工作知识点-unicode">
-<meta name="twitter:description" content="unicode、utf8编码我是小小强，这是我的第14篇原创文章，阅读需要大约5分钟。    参考对于unicode,utf8知识点的介绍，可以参考以下两篇文章。    字符编码笔记：ASCII，Unicode 和 UTF-8   叫板阮一峰老师：你真的理解了 Unicode 与 UTF    个人理解 unicode只是表示了每个字符对应的编码映射（字符集），称为codepoint，至于字符究竟">
+<meta name="twitter:description" content="unicode、utf8编码我是小小强，这是我的第14篇原创文章，阅读需要大约5分钟。    参考对于unicode,utf8知识点的介绍，可以参考以下两篇文章。    字符编码笔记：ASCII，Unicode 和 UTF-8   叫板阮一峰老师：你真的理解了 Unicode 与 UTF">
 
 
 
@@ -367,6 +367,7 @@
 <li><a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html" target="_blank" rel="external">字符编码笔记：ASCII，Unicode 和 UTF-8</a>  </li>
 <li><a href="https://foofish.net/unicode_utf-8.html" target="_blank" rel="external">叫板阮一峰老师：你真的理解了 Unicode 与 UTF</a>  </li>
 </ul>
+<a id="more"></a>
 <h3 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h3><ul>
 <li>unicode只是表示了每个字符对应的编码映射（字符集），称为codepoint，至于字符究竟在内存中如何表示和存储，由具体的编码规则（如utf8，gbk）实现。比如一个人的姓名“张三”，这个就是名字的字符映射。如果要和美国人交流，就需要写成“ZhangSan”，和其它国家人交流，也是如此。这就是具体的存储和表示方式。  </li>
 <li>早期的unicode是两字节表示，因此现在很多书上可以看到<code>“unicode字符是2个字节”</code>这种表述，现在来说是不准确的。在发展后期，Unicode一共有17个平面，开头是0x00—–0x10；每个平面(0x0000-0xFFFF)都可以表示65535个字符。因此现在可以表示0x00 0000-0x10 FFFF这些字符。  </li>
