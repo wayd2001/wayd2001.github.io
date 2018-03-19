@@ -90,13 +90,13 @@
 
 
 
-<meta name="description" content="我是小小强，这是我的第13篇原创文章，阅读需要大约10分钟。  背景在使用IntellJ进行java开发时，经常需要导入第三方的jar包，一般会有两种方式。 方法1这种方法适用于将不太多的jar包导入工程。右键工程－open module settings，选择左侧modules页签，右侧选择Dependencies ，点击下方的+，浏览选择要导入工程的jar包。 方法2这种方式适用于jar包比较">
+<meta name="description" content="我是小小强，这是我的第13篇原创文章，阅读需要大约10分钟。  背景在使用IntellJ进行java开发时，经常需要导入第三方的jar包，一般会有两种方式。 方法1这种方法适用于将不太多的jar包导入工程。">
 <meta name="keywords" content="IntellJ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IntellJ IDEA导入jar包的方式">
 <meta property="og:url" content="http://xiaoxiaoqiang.win/2017/10/30/开发工具/IntellJ-IDEA导入jar包的方式/index.html">
 <meta property="og:site_name" content="小小强的部落">
-<meta property="og:description" content="我是小小强，这是我的第13篇原创文章，阅读需要大约10分钟。  背景在使用IntellJ进行java开发时，经常需要导入第三方的jar包，一般会有两种方式。 方法1这种方法适用于将不太多的jar包导入工程。右键工程－open module settings，选择左侧modules页签，右侧选择Dependencies ，点击下方的+，浏览选择要导入工程的jar包。 方法2这种方式适用于jar包比较">
+<meta property="og:description" content="我是小小强，这是我的第13篇原创文章，阅读需要大约10分钟。  背景在使用IntellJ进行java开发时，经常需要导入第三方的jar包，一般会有两种方式。 方法1这种方法适用于将不太多的jar包导入工程。">
 <meta property="og:image" content="http://ossysbflp.bkt.clouddn.com/A001-1.png">
 <meta property="og:image" content="http://ossysbflp.bkt.clouddn.com/A001-7.png">
 <meta property="og:image" content="http://ossysbflp.bkt.clouddn.com/A001-3.png">
@@ -104,10 +104,10 @@
 <meta property="og:image" content="http://ossysbflp.bkt.clouddn.com/A001-4.png">
 <meta property="og:image" content="http://ossysbflp.bkt.clouddn.com/A001-5.png">
 <meta property="og:image" content="http://ossysbflp.bkt.clouddn.com/A001-6.png">
-<meta property="og:updated_time" content="2017-10-30T15:21:21.000Z">
+<meta property="og:updated_time" content="2018-03-19T15:13:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IntellJ IDEA导入jar包的方式">
-<meta name="twitter:description" content="我是小小强，这是我的第13篇原创文章，阅读需要大约10分钟。  背景在使用IntellJ进行java开发时，经常需要导入第三方的jar包，一般会有两种方式。 方法1这种方法适用于将不太多的jar包导入工程。右键工程－open module settings，选择左侧modules页签，右侧选择Dependencies ，点击下方的+，浏览选择要导入工程的jar包。 方法2这种方式适用于jar包比较">
+<meta name="twitter:description" content="我是小小强，这是我的第13篇原创文章，阅读需要大约10分钟。  背景在使用IntellJ进行java开发时，经常需要导入第三方的jar包，一般会有两种方式。 方法1这种方法适用于将不太多的jar包导入工程。">
 <meta name="twitter:image" content="http://ossysbflp.bkt.clouddn.com/A001-1.png">
 
 
@@ -371,7 +371,9 @@
         <p>我是小小强，这是我的第13篇原创文章，阅读需要大约10分钟。</p>
 <hr>
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在使用IntellJ进行java开发时，经常需要导入第三方的jar包，一般会有两种方式。</p>
-<h2 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h2><p>这种方法适用于将不太多的jar包导入工程。<br>右键工程－<code>open module settings</code>，选择左侧<code>modules</code>页签，右侧选择<code>Dependencies</code> ，点击下方的<code>+</code>，浏览选择要导入工程的jar包。<br><img src="http://ossysbflp.bkt.clouddn.com/A001-1.png" alt=""></p>
+<h2 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h2><p>这种方法适用于将不太多的jar包导入工程。</p>
+<a id="more"></a>
+<p>右键工程－<code>open module settings</code>，选择左侧<code>modules</code>页签，右侧选择<code>Dependencies</code> ，点击下方的<code>+</code>，浏览选择要导入工程的jar包。<br><img src="http://ossysbflp.bkt.clouddn.com/A001-1.png" alt=""></p>
 <h2 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h2><p>这种方式适用于jar包比较多的情况，尤其是多个module可能都要引入同样的jar包，每次重复导入会比较繁琐，这时候可以选择创建一个公用的lib库。</p>
 <h4 id="创建公用库"><a href="#创建公用库" class="headerlink" title="创建公用库"></a>创建公用库</h4><p>右键工程－<code>open module settings</code>，选择左侧<code>Libraries</code>标签，点击中间标签页的<code>+</code>号，选择<code>java</code>，然后随便选择一个jar文件或者目录。<br><img src="http://ossysbflp.bkt.clouddn.com/A001-7.png" alt="">  </p>
 <p>如选择下图的apache目录。  </p>
