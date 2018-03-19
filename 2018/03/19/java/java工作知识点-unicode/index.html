@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="unicode,java," />
 
 
 
@@ -90,16 +90,17 @@
 
 
 
-<meta name="description" content="技术之路历练">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://xiaoxiaoqiang.win/about/index.html">
+<meta name="description" content="unicode、utf8编码我是小小强，这是我的第14篇原创文章，阅读需要大约5分钟。    参考对于unicode,utf8知识点的介绍，可以参考以下两篇文章。    字符编码笔记：ASCII，Unicode 和 UTF-8   叫板阮一峰老师：你真的理解了 Unicode 与 UTF    个人理解 unicode只是表示了每个字符对应的编码映射（字符集），称为codepoint，至于字符究竟">
+<meta name="keywords" content="unicode,java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java工作知识点-unicode">
+<meta property="og:url" content="http://xiaoxiaoqiang.win/2018/03/19/java/java工作知识点-unicode/index.html">
 <meta property="og:site_name" content="小小强的部落">
-<meta property="og:description" content="技术之路历练">
-<meta property="og:updated_time" content="2017-05-13T11:00:07.000Z">
+<meta property="og:description" content="unicode、utf8编码我是小小强，这是我的第14篇原创文章，阅读需要大约5分钟。    参考对于unicode,utf8知识点的介绍，可以参考以下两篇文章。    字符编码笔记：ASCII，Unicode 和 UTF-8   叫板阮一峰老师：你真的理解了 Unicode 与 UTF    个人理解 unicode只是表示了每个字符对应的编码映射（字符集），称为codepoint，至于字符究竟">
+<meta property="og:updated_time" content="2018-03-19T14:59:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="技术之路历练">
+<meta name="twitter:title" content="java工作知识点-unicode">
+<meta name="twitter:description" content="unicode、utf8编码我是小小强，这是我的第14篇原创文章，阅读需要大约5分钟。    参考对于unicode,utf8知识点的介绍，可以参考以下两篇文章。    字符编码笔记：ASCII，Unicode 和 UTF-8   叫板阮一峰老师：你真的理解了 Unicode 与 UTF    个人理解 unicode只是表示了每个字符对应的编码映射（字符集），称为codepoint，至于字符究竟">
 
 
 
@@ -127,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://xiaoxiaoqiang.win/about/"/>
+  <link rel="canonical" href="http://xiaoxiaoqiang.win/2018/03/19/java/java工作知识点-unicode/"/>
 
 
 
 
 
-  <title>about | 小小强的部落</title>
+  <title>java工作知识点-unicode | 小小强的部落</title>
 
 </head>
 
@@ -159,7 +160,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -264,18 +265,203 @@
             
 
   <div id="posts" class="posts-expand">
-  <header class="post-header">
+    
 
-	<h1 class="post-title" itemprop="name headline">about</h1>
+  
 
+  
+  
+  
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://xiaoxiaoqiang.win/2018/03/19/java/java工作知识点-unicode/">
 
-</header>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小小强">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/logo/icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小小强的部落">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">java工作知识点-unicode</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-19T22:30:13+08:00">
+                2018-03-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
     
+
+    <div class="post-body" itemprop="articleBody">
+
       
-    
+      
+
+      
+        <h2 id="unicode、utf8编码"><a href="#unicode、utf8编码" class="headerlink" title="unicode、utf8编码"></a>unicode、utf8编码</h2><p>我是小小强，这是我的第14篇原创文章，阅读需要大约5分钟。  </p>
+<hr>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>对于unicode,utf8知识点的介绍，可以参考以下两篇文章。  </p>
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html" target="_blank" rel="external">字符编码笔记：ASCII，Unicode 和 UTF-8</a>  </li>
+<li><a href="https://foofish.net/unicode_utf-8.html" target="_blank" rel="external">叫板阮一峰老师：你真的理解了 Unicode 与 UTF</a>  </li>
+</ul>
+<h3 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h3><ul>
+<li>unicode只是表示了每个字符对应的编码映射（字符集），称为codepoint，至于字符究竟在内存中如何表示和存储，由具体的编码规则（如utf8，gbk）实现。比如一个人的姓名“张三”，这个就是名字的字符映射。如果要和美国人交流，就需要写成“ZhangSan”，和其它国家人交流，也是如此。这就是具体的存储和表示方式。  </li>
+<li>早期的unicode是两字节表示，因此现在很多书上可以看到<code>“unicode字符是2个字节”</code>这种表述，现在来说是不准确的。在发展后期，Unicode一共有17个平面，开头是0x00—–0x10；每个平面(0x0000-0xFFFF)都可以表示65535个字符。因此现在可以表示0x00 0000-0x10 FFFF这些字符。  </li>
+<li>此外，unicode字符在存储时，也是区分字节序的。如一个字符的编码映射为u+AABB，在大端情况下，内存低字节为AA高字节BB。UTF-8使用最多4字节编码一个字符，常见字符3字节。  </li>
+<li>另外，char变量字符是可以赋值给int型变量的，反之不可以。</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/images/money/wechat.JPG" alt="小小强 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/images/money/ali.JPG" alt="小小强 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/unicode/" rel="tag"># unicode</a>
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/30/开发工具/IntellJ-IDEA导入jar包的方式/" rel="next" title="IntellJ IDEA导入jar包的方式">
+                <i class="fa fa-chevron-left"></i> IntellJ IDEA导入jar包的方式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -309,8 +495,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/images/logo/icon.jpg"
@@ -412,6 +607,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#unicode、utf8编码"><span class="nav-number">1.</span> <span class="nav-text">unicode、utf8编码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">1.1.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个人理解"><span class="nav-number">1.2.</span> <span class="nav-text">个人理解</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -538,6 +749,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 

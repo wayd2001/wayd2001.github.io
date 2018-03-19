@@ -274,6 +274,152 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://xiaoxiaoqiang.win/2018/03/19/java/java工作知识点-unicode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小小强">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/logo/icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小小强的部落">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/19/java/java工作知识点-unicode/" itemprop="url">java工作知识点-unicode</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-19T22:30:13+08:00">
+                2018-03-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="unicode、utf8编码"><a href="#unicode、utf8编码" class="headerlink" title="unicode、utf8编码"></a>unicode、utf8编码</h2><p>我是小小强，这是我的第14篇原创文章，阅读需要大约5分钟。  </p>
+<hr>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>对于unicode,utf8知识点的介绍，可以参考以下两篇文章。  </p>
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html" target="_blank" rel="external">字符编码笔记：ASCII，Unicode 和 UTF-8</a>  </li>
+<li><a href="https://foofish.net/unicode_utf-8.html" target="_blank" rel="external">叫板阮一峰老师：你真的理解了 Unicode 与 UTF</a>  </li>
+</ul>
+<h3 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h3><ul>
+<li>unicode只是表示了每个字符对应的编码映射（字符集），称为codepoint，至于字符究竟在内存中如何表示和存储，由具体的编码规则（如utf8，gbk）实现。比如一个人的姓名“张三”，这个就是名字的字符映射。如果要和美国人交流，就需要写成“ZhangSan”，和其它国家人交流，也是如此。这就是具体的存储和表示方式。  </li>
+<li>早期的unicode是两字节表示，因此现在很多书上可以看到<code>“unicode字符是2个字节”</code>这种表述，现在来说是不准确的。在发展后期，Unicode一共有17个平面，开头是0x00—–0x10；每个平面(0x0000-0xFFFF)都可以表示65535个字符。因此现在可以表示0x00 0000-0x10 FFFF这些字符。  </li>
+<li>此外，unicode字符在存储时，也是区分字节序的。如一个字符的编码映射为u+AABB，在大端情况下，内存低字节为AA高字节BB。UTF-8使用最多4字节编码一个字符，常见字符3字节。  </li>
+<li>另外，char变量字符是可以赋值给int型变量的，反之不可以。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://xiaoxiaoqiang.win/2017/10/30/开发工具/IntellJ-IDEA导入jar包的方式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1542,148 +1688,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://xiaoxiaoqiang.win/2017/06/29/LintCode/入门-366-斐波纳契数列/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="小小强">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/images/logo/icon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小小强的部落">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/29/LintCode/入门-366-斐波纳契数列/" itemprop="url">[入门]366.斐波纳契数列</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T22:16:06+08:00">
-                2017-06-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LintCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LintCode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>我是小小强，这是我的第4篇原创文章，阅读需要大约10分钟。  </p>
-<hr>
-<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>LintCode:<a href="http://www.lintcode.com/zh-cn/problem/fibonacci/" target="_blank" rel="external">斐波纳契数列</a></p>
-<h1 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h1><p>查找<code>斐波纳契数列</code>中第 N 个数。<br>所谓的<code>斐波纳契数列</code>是指：<br>前2个数是 <code>0</code> 和<code>1</code> 。<br>第 i 个数是第<code>i-1</code>个数和第<code>i-2</code> 个数的和。<br>斐波纳契数列的前10个数字是：<br><code>0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ...</code>  </p>
-<h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><p>给定 <code>1</code>，返回<code>0</code><br>给定 <code>2</code>，返回<code>1</code><br>给定<code>10</code>，返回 <code>34</code></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/29/LintCode/入门-366-斐波纳契数列/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1733,7 +1737,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1755,7 +1759,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1847,8 +1851,8 @@
 
 <div class="copyright" >
   
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
